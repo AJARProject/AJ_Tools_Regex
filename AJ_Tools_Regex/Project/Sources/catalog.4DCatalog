@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
+<base name="AJ_Tools_Regex" uuid="814F5FA893F44A25AABD5B3FC37EFB35" collation_locale="en">
+	<schema name="DEFAULT_SCHEMA"/>
+	<base_extra __stringCompHash="icu:63.1.0" __keywordBuildingHash="icu:63.1.0" package_name="AJ_Tools_Regex" structure_file_name="AJ_Tools_Regex" data_file_path=":AJ_Tools_Regex.4DD"/>
+</base>

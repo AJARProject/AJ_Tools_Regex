@@ -1,0 +1,47 @@
+﻿{
+	"methods": {
+		"Extract": {
+			"timeStamp": "2020-02-03T11:07:11.959Z",
+			"attributes": {
+				"preemptive": "capable"
+			}
+		},
+		"Substitute": {
+			"timeStamp": "2020-02-03T11:07:11.957Z",
+			"attributes": {
+				"preemptive": "capable"
+			}
+		},
+		"New regex": {
+			"timeStamp": "2020-02-03T11:07:11.954Z",
+			"attributes": {
+				"shared": true,
+				"preemptive": "capable"
+			}
+		},
+		"Matches": {
+			"timeStamp": "2020-02-03T11:07:11.958Z",
+			"attributes": {
+				"preemptive": "capable"
+			}
+		},
+		"Match": {
+			"timeStamp": "2020-02-03T11:07:11.957Z",
+			"attributes": {
+				"preemptive": "capable"
+			}
+		},
+		"Split": {
+			"timeStamp": "2020-02-03T11:07:11.955Z",
+			"attributes": {
+				"preemptive": "capable"
+			}
+		},
+		"Regex_Licence": {
+			"timeStamp": "2020-02-03T11:07:11.954Z",
+			"attributes": {
+				"shared": true
+			}
+		}
+	}
+}

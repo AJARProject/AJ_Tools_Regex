@@ -1,0 +1,578 @@
+﻿{
+	"destination": "detailScreen",
+	"windowSizingX": "fixed",
+	"formSizeAnchor": "form_size_limit",
+	"rightMargin": 0,
+	"bottomMargin": 0,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onCloseBox",
+		"onUnload",
+		"onTimer",
+		"onResize",
+		"onBoundVariableChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"tab_control_obj": {
+					"type": "tab",
+					"top": 7,
+					"left": -4,
+					"width": 1329,
+					"height": 1129,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "Form:C1466.tab",
+					"dataSourceTypeHint": "arrayText",
+					"action": "GotoPage",
+					"method": "ObjectMethods/tab_control_obj.4dm",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"Tab Control1": {
+					"type": "tab",
+					"top": 533,
+					"left": 6,
+					"width": 1315,
+					"height": 60,
+					"sizingX": "grow",
+					"sizingY": "move",
+					"dataSourceTypeHint": "arrayText",
+					"action": "gotoPage",
+					"events": [
+						"onClick"
+					]
+				},
+				"regexName": {
+					"type": "input",
+					"top": 38,
+					"left": 205,
+					"width": 519,
+					"height": 17,
+					"sizingX": "grow",
+					"dataSource": "Form:C1466.testSelected.name",
+					"placeholder": "Test name",
+					"method": "ObjectMethods/regexName.4dm",
+					"events": [
+						"onBeforeKeystroke",
+						"onDataChange",
+						"onAfterKeystroke"
+					]
+				},
+				"pattern": {
+					"type": "input",
+					"top": 151,
+					"left": 205,
+					"width": 519,
+					"height": 33,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "Form:C1466.testSelected.pattern",
+					"placeholder": "Put your pattern here...",
+					"method": "ObjectMethods/pattern.4dm",
+					"events": [
+						"onBeforeKeystroke",
+						"onDataChange",
+						"onAfterKeystroke"
+					]
+				},
+				"target": {
+					"type": "input",
+					"top": 200,
+					"left": 205,
+					"width": 502,
+					"height": 337,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "Form:C1466.testSelected.target",
+					"placeholder": "Put the target text here...",
+					"scrollbarVertical": "automatic",
+					"method": "ObjectMethods/target.4dm",
+					"events": [
+						"onBeforeKeystroke",
+						"onDataChange",
+						"onAfterKeystroke"
+					]
+				},
+				"description": {
+					"type": "input",
+					"top": 71,
+					"left": 205,
+					"width": 502,
+					"height": 65,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "Form:C1466.testSelected.description",
+					"placeholder": "Description",
+					"scrollbarVertical": "automatic",
+					"method": "ObjectMethods/description.4dm",
+					"events": [
+						"onBeforeKeystroke",
+						"onDataChange",
+						"onAfterKeystroke"
+					]
+				},
+				"test_button_obj": {
+					"type": "button",
+					"top": 558,
+					"left": 1189,
+					"width": 120,
+					"height": 26,
+					"sizingX": "move",
+					"sizingY": "move",
+					"shortcutKey": "t",
+					"shortcutAccel": true,
+					"text": "Test",
+					"focusable": false,
+					"method": "ObjectMethods/test_button_obj.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"listbox_name_obj": {
+					"type": "listbox",
+					"top": 33,
+					"left": 0,
+					"width": 192,
+					"height": 507,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"listboxType": "collection",
+					"hideFocusRing": true,
+					"movableRows": false,
+					"memorizeValue": true,
+					"dataSource": "Form:C1466.examples",
+					"currentItemSource": "Form:C1466.testSelected",
+					"selectionMode": "single",
+					"scrollbarHorizontal": "automatic",
+					"borderStyle": "none",
+					"method": "ObjectMethods/listbox_name_obj.4dm",
+					"events": [
+						"onSelectionChange"
+					],
+					"columns": [
+						{
+							"name": "name_col",
+							"dataSource": "This:C1470.name",
+							"width": 177,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"alternateFill": "#FFFACD",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "name_header",
+								"text": "Examples",
+								"dataSource": "Form:C1466.example"
+							},
+							"footer": {
+								"name": "Footer2",
+								"timeFormat": "hh_mm_ss"
+							}
+						}
+					]
+				},
+				"form_size_limit": {
+					"type": "rectangle",
+					"top": 1118,
+					"left": 1309,
+					"width": 20,
+					"height": 20,
+					"visibility": "hidden",
+					"sizingX": "move",
+					"sizingY": "move",
+					"fill": "#FF0000",
+					"stroke": "#FF0000"
+				},
+				"new_button_obj": {
+					"type": "button",
+					"top": 558,
+					"left": 12,
+					"width": 120,
+					"height": 26,
+					"sizingX": "move",
+					"sizingY": "move",
+					"shortcutKey": "n",
+					"shortcutAccel": true,
+					"text": "New",
+					"focusable": false,
+					"method": "ObjectMethods/new_button_obj.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"save_button_obj": {
+					"type": "button",
+					"top": 977,
+					"left": 1370,
+					"width": 120,
+					"height": 26,
+					"sizingX": "move",
+					"sizingY": "move",
+					"shortcutKey": "s",
+					"shortcutAccel": true,
+					"text": "Save",
+					"focusable": false,
+					"method": "ObjectMethods/save_button_obj.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"delete_button_obj": {
+					"type": "button",
+					"top": 558,
+					"left": 292,
+					"width": 120,
+					"height": 26,
+					"sizingX": "move",
+					"sizingY": "move",
+					"shortcutKey": "d",
+					"shortcutAccel": true,
+					"text": "Delete",
+					"focusable": false,
+					"method": "ObjectMethods/delete_button_obj.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"export_button_obj": {
+					"type": "button",
+					"top": 558,
+					"left": 432,
+					"width": 120,
+					"height": 26,
+					"sizingX": "move",
+					"sizingY": "move",
+					"shortcutKey": "e",
+					"shortcutAccel": true,
+					"text": "Export",
+					"focusable": false,
+					"method": "ObjectMethods/export_button_obj.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Import_button_obj": {
+					"type": "button",
+					"top": 558,
+					"left": 572,
+					"width": 120,
+					"height": 26,
+					"sizingX": "move",
+					"sizingY": "move",
+					"shortcutKey": "i",
+					"shortcutAccel": true,
+					"text": "Import",
+					"focusable": false,
+					"method": "ObjectMethods/Import_button_obj.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"vSplitter_2": {
+					"type": "button",
+					"top": 33,
+					"left": 194,
+					"width": 9,
+					"height": 508,
+					"action": "automaticSplitter",
+					"display": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"vBullet_2": {
+					"type": "picture",
+					"top": 290,
+					"left": 194,
+					"width": 8,
+					"height": 8,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/Common/SplitterButton.png"
+				},
+				"cancel_button_obj": {
+					"type": "button",
+					"top": 558,
+					"left": 1049,
+					"width": 120,
+					"height": 26,
+					"sizingX": "move",
+					"sizingY": "move",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Cancel",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"listbox_Subform": {
+					"type": "subform",
+					"top": 33,
+					"left": 737,
+					"width": 572,
+					"height": 507,
+					"sizingY": "grow",
+					"dataSource": "Form:C1466.testSelected",
+					"enterableInList": false,
+					"deletableInList": false,
+					"doubleClickInRowAction": "editSubrecord",
+					"doubleClickInEmptyAreaAction": "addSubrecord",
+					"printFrame": "variable",
+					"method": "ObjectMethods/listbox_Subform.4dm",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					]
+				},
+				"copyright_comment_obj": {
+					"type": "text",
+					"top": 1120,
+					"left": 0,
+					"width": 293,
+					"height": 12,
+					"sizingY": "move",
+					"stroke": "#777777",
+					"class": "Mini",
+					"text": "© 2013-2018 - AJAR S.A. http://www.ajar.ch/"
+				},
+				"icu_comment_obj": {
+					"type": "text",
+					"top": 1120,
+					"left": 1169,
+					"width": 140,
+					"height": 12,
+					"sizingX": "move",
+					"sizingY": "move",
+					"stroke": "#888888",
+					"class": "Mini",
+					"text": "ICU Regular Expressions"
+				},
+				"icu_button_obj": {
+					"type": "button",
+					"top": 1118,
+					"left": 1168,
+					"width": 133,
+					"height": 15,
+					"sizingX": "move",
+					"sizingY": "move",
+					"display": false,
+					"method": "ObjectMethods/icu_button_obj.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"4dforums_comment_obj": {
+					"type": "text",
+					"top": 1120,
+					"left": 939,
+					"width": 210,
+					"height": 13,
+					"sizingX": "move",
+					"sizingY": "move",
+					"stroke": "#888888",
+					"class": "Mini",
+					"text": "4D Forums : Regex for 4D v17R3"
+				},
+				"4dforums_button_obj": {
+					"type": "button",
+					"top": 1116,
+					"left": 939,
+					"width": 210,
+					"height": 15,
+					"sizingX": "move",
+					"sizingY": "move",
+					"display": false,
+					"method": "ObjectMethods/4dforums_button_obj.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"obj_button_valid": {
+					"type": "pictureButton",
+					"top": 565,
+					"left": 1197,
+					"width": 12,
+					"height": 12,
+					"visibility": "hidden",
+					"sizingX": "move",
+					"sizingY": "move",
+					"rowCount": 4,
+					"picture": "/RESOURCES/Common/Button.png",
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true
+				},
+				"Bouton invisible2": {
+					"type": "button",
+					"top": 562,
+					"left": 1194,
+					"width": 18,
+					"height": 19,
+					"sizingX": "move",
+					"sizingY": "move",
+					"display": false
+				},
+				"regex_visual_webarea_obj": {
+					"type": "webArea",
+					"top": 609,
+					"left": 2,
+					"width": 1327,
+					"height": 496,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"urlSource": "Zone Web_url",
+					"progressSource": "Zone Web_progress",
+					"webEngine": "embedded",
+					"methodsAccessibility": "all",
+					"contextMenu": "none",
+					"borderStyle": "solid"
+				},
+				"hSplitter_5": {
+					"type": "button",
+					"top": 596,
+					"left": 0,
+					"width": 1329,
+					"height": 8,
+					"sizingX": "grow",
+					"action": "automaticSplitter",
+					"display": false,
+					"method": "ObjectMethods/hSplitter_5.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"hBullet_3": {
+					"type": "picture",
+					"top": 596,
+					"left": 660,
+					"width": 8,
+					"height": 8,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/Common/SplitterButton.png"
+				},
+				"hSplitter_1": {
+					"type": "button",
+					"top": 140,
+					"left": 204,
+					"width": 520,
+					"height": 8,
+					"sizingX": "grow",
+					"action": "automaticSplitter",
+					"display": false,
+					"method": "ObjectMethods/hSplitter_1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"hBullet_1": {
+					"type": "picture",
+					"top": 140,
+					"left": 460,
+					"width": 8,
+					"height": 8,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/Common/SplitterButton.png"
+				},
+				"hSplitter_2": {
+					"type": "button",
+					"top": 188,
+					"left": 204,
+					"width": 520,
+					"height": 8,
+					"sizingX": "grow",
+					"action": "automaticSplitter",
+					"display": false,
+					"method": "ObjectMethods/hSplitter_2.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"hBullet_2": {
+					"type": "picture",
+					"top": 188,
+					"left": 460,
+					"width": 8,
+					"height": 8,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/Common/SplitterButton.png"
+				},
+				"vSplitter_1": {
+					"type": "button",
+					"top": 33,
+					"left": 727,
+					"width": 8,
+					"height": 507,
+					"sizingY": "grow",
+					"action": "automaticSplitter",
+					"display": false,
+					"method": "ObjectMethods/vSplitter_1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"vBullet_1": {
+					"type": "picture",
+					"top": 282,
+					"left": 727,
+					"width": 8,
+					"height": 8,
+					"sizingY": "move",
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/Common/SplitterButton.png"
+				},
+				"4dforums_button_obj1": {
+					"type": "button",
+					"top": 1119,
+					"left": 2,
+					"width": 229,
+					"height": 17,
+					"sizingX": "move",
+					"sizingY": "move",
+					"display": false,
+					"method": "ObjectMethods/4dforums_button_obj1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"obj_PPPattern": {
+					"type": "pictureButton",
+					"top": 558,
+					"left": 711,
+					"width": 24,
+					"height": 24,
+					"sizingX": "move",
+					"sizingY": "move",
+					"tooltip": ":xliff:Clipboardtip",
+					"rowCount": 4,
+					"picture": "/RESOURCES/Images/library/presse-papiers.png",
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"method": "ObjectMethods/obj_PPPattern.4dm",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		}
+	]
+}

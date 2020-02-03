@@ -1,0 +1,268 @@
+﻿{
+	"destination": "detailScreen",
+	"rightMargin": 0,
+	"bottomMargin": 0,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onTimer",
+		"onAfterKeystroke",
+		"onAfterEdit",
+		"onBeginDragOver",
+		"onBoundVariableChange",
+		"onPageChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"recblocGroup": {
+					"type": "rectangle",
+					"top": 2,
+					"left": 2,
+					"width": 565,
+					"height": 75,
+					"fill": "transparent",
+					"stroke": "transparent"
+				},
+				"Rectangle5": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 2,
+					"width": 574,
+					"height": 79,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"fill": "#FFDFFF",
+					"stroke": "#FFDFFF",
+					"strokeWidth": 0.1
+				},
+				"Rectangle6": {
+					"type": "rectangle",
+					"top": 88,
+					"left": 2,
+					"width": 570,
+					"height": 415,
+					"sizingY": "grow",
+					"fill": "#FFDFFF",
+					"stroke": "#FFDFFF",
+					"strokeWidth": 0.1
+				},
+				"groupList_obj": {
+					"type": "input",
+					"top": 14,
+					"left": 34,
+					"width": 525,
+					"height": 65,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "Form:C1466.groupList",
+					"class": "default",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Extract"
+					},
+					"hideFocusRing": true,
+					"contextMenu": "none",
+					"placeholder": ":xliff:Extract",
+					"scrollbarVertical": "visible",
+					"method": "ObjectMethods/groupList_obj.4dm",
+					"events": [
+						"onBeforeKeystroke",
+						"onAfterKeystroke"
+					]
+				},
+				"listbox": {
+					"type": "listbox",
+					"top": 88,
+					"left": 34,
+					"width": 542,
+					"height": 415,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"listboxType": "collection",
+					"movableRows": false,
+					"dataSource": "Form:C1466.result.listbox",
+					"selectionMode": "single",
+					"scrollbarHorizontal": "automatic",
+					"events": [
+						"onClick",
+						"onDataChange",
+						"onSelectionChange",
+						"onHeaderClick"
+					],
+					"columns": [
+						{
+							"name": "Column1",
+							"dataSource": "This:C1470.group",
+							"dataSourceTypeHint": "number",
+							"width": 50,
+							"minWidth": 30,
+							"maxWidth": 70,
+							"enterable": false,
+							"events": [
+								"onLoad",
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "group_head",
+								"text": "Group"
+							},
+							"footer": {
+								"name": "Footer1",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Column3",
+							"dataSource": "This:C1470.position",
+							"dataSourceTypeHint": "number",
+							"width": 50,
+							"minWidth": 30,
+							"maxWidth": 70,
+							"enterable": false,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "position_header",
+								"text": "Position"
+							},
+							"footer": {
+								"name": "Footer3",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Column4",
+							"dataSource": "This:C1470.length",
+							"dataSourceTypeHint": "number",
+							"width": 50,
+							"minWidth": 30,
+							"maxWidth": 70,
+							"enterable": false,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "length_head",
+								"text": "Length"
+							},
+							"footer": {
+								"name": "Footer4",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Column5",
+							"dataSource": "This:C1470.string_extracted",
+							"width": 400,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "string_header",
+								"text": "String"
+							},
+							"footer": {
+								"name": "Footer5",
+								"timeFormat": "hh_mm_ss"
+							}
+						}
+					]
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 0,
+					"left": 35,
+					"width": 391,
+					"height": 12,
+					"sizingX": "grow",
+					"stroke": "#009900",
+					"fontFamily": "Lucida Grande",
+					"fontSize": 10,
+					"text": ":xliff:Group list"
+				},
+				"hSplitter_5": {
+					"type": "button",
+					"top": 80,
+					"left": 0,
+					"width": 572,
+					"height": 8,
+					"sizingX": "grow",
+					"action": "automaticSplitter",
+					"display": false,
+					"method": "ObjectMethods/hSplitter_5.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"hBullet_5": {
+					"type": "picture",
+					"top": 80,
+					"left": 282,
+					"width": 8,
+					"height": 8,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/Common/SplitterButton.png"
+				},
+				"obj_vt_ExtractGroup_JVF": {
+					"type": "text",
+					"top": 11,
+					"left": 2,
+					"width": 25,
+					"height": 62,
+					"sizingY": "grow",
+					"class": "Mini",
+					"textAngle": 270,
+					"text": ":xliff:Extract"
+				},
+				"obj_details_4_JVF": {
+					"type": "text",
+					"top": 420,
+					"left": 1,
+					"width": 13,
+					"height": 76,
+					"sizingY": "grow",
+					"stroke": "#000000",
+					"class": "Mini",
+					"textAngle": 270,
+					"text": ":xliff:Details"
+				},
+				"recblocreplacetxtsub": {
+					"type": "rectangle",
+					"top": 2,
+					"left": 18,
+					"width": 9,
+					"height": 75,
+					"fill": "transparent",
+					"stroke": "transparent"
+				}
+			}
+		}
+	]
+}

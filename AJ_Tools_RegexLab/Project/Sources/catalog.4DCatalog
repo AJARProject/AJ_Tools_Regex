@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
+<base name="AJ_Tools_RegexLab" uuid="4B809AA379724CB295EEDF9BD1DE9C01" collation_locale="en">
+	<schema name="DEFAULT_SCHEMA"/>
+	<base_extra __stringCompHash="icu:63.1.0" __keywordBuildingHash="icu:63.1.0" package_name="AJ_Tools_RegexLab" structure_file_name="AJ_Tools_RegexLab" data_file_path=":AJ_Tools_RegexLab.4DD"/>
+</base>
