@@ -1,0 +1,465 @@
+<html>
+
+	<head>
+		<title>Regex Lab 4 : Lisez-moi</title>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <style type="text/css">
+<!--
+body{
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 12px;
+}
+.maintable {
+    margin: 0 auto;
+    width: 100%;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: #666;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #ebebeb;
+	vertical-align: 0;
+	overflow: hidden;
+    background: #ebebeb;
+}
+
+.mheader {
+    float: left;
+    width: calc(100% - 28px);
+    background: #ebebeb;
+	font-size: 12px;
+	border-bottom: 1px solid #c0c0c0;
+	border-block-start-width: px;
+	padding: 5px 3px;
+	margin-left: 10px;
+}
+
+.row{   
+    width:100%; 
+    display: flex;
+    line-height: 20px;
+	font-size: 11px;
+}
+.firstrow{
+	padding-top: 5px;
+	font-weight: bold;
+}
+.lastrow{
+	margin-bottom: 5px;
+}
+.parameter {
+    background: #ebebeb;
+    width: 15%;
+    float: left;
+	padding-left: 10px;
+	border-right: 1px solid #c0c0c0;
+}
+.type {
+    background: #ebebeb;
+    float: left;
+    width : 15%;
+	height: auto;
+	padding-left: 10px;
+	border-right: 1px solid #c0c0c0;
+}
+
+.description {
+    background: #ebebeb;
+    float: left;
+	padding-left: 10px;
+	width: calc(70% - 38px);
+}
+.code4D {
+	background-color: rgb(255, 252, 223);
+
+	padding: 10px;
+	border: 1px solid #e6e0aa;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.example{
+	font-size: 12px;
+	position:  relative;
+	top:  -2em;
+	background-color: #feffff;
+	border-style: solid;
+	border: 1px solid #e6e0aa;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding: 3px;
+	display: inline-block;
+}
+
+.c4d_locale {
+	font-size: inherit;
+	color: #0096ff;
+}
+
+.c4d_constant {
+	font-size: inherit;
+	text-decoration: underline;
+}
+
+.c4d_command {
+	color: #941100;
+	font-size: inherit;
+	font-weight: bold;
+}
+
+.c4d_keyword {
+	color: #008e00;
+	font-weight: bold;
+	font-size: inherit;
+}
+
+.c4d_method {
+	color: #005392;
+	font-weight: bold;
+	font-style: italic;
+	font-size: inherit;
+}
+
+.c4d_comment {
+	color: #a9a9a9;
+	font-size: inherit;
+}
+
+.code {
+	margin-top: -1.5em;
+	font: 11px 'Courier New', Courier, monospace;
+}
+
+.name_vi {
+	color: #661d99;
+	font: bold 60px 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+.name_or {
+	color: #fd5e00;
+}
+
+.name_release {
+	color: #818181;
+}
+
+
+
+-->
+        </style>
+        <link href="http://www.ajar.ch/">
+</head>
+
+	<body leftmargin="20" marginheight="20" marginwidth="20" topmargin="20">
+		<div class="Section1">
+			
+		</div>
+		<div class="Section1" align="left">
+			<hr>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="20%"><div class="name_vi">Reg<span class="name_or">Ex</span><br />La<span class="name_or">bs</span> <span class="name_release">4</span></div></td>
+<td valign="middle">
+						<table width="100%" border="0" cellspacing="0" cellpadding="4" height="119">
+							<tr>
+								<td valign="bottom">
+								<iframe src="../../Common/Localisation.html" frameborder="0" scrolling="no" align="middle" height="40" width="100%" noresize="true"></iframe>								</td>
+							</tr>
+						</table>
+				  </td>
+				</tr>
+			</table>
+			<hr>
+			<p>"Regex Lab" is a component that will add powerful text functions by using regular expression. "Regex Lab" uses the new  command <strong>Match Regex</strong> provided with 4D V11 SQL.</p>
+			<p><strong>Match Regex</strong> uses the <a href="http://www.icu-project.org/userguide/regexp.html">ICU Regex engine</a>.</p>
+			<hr align="left" width="100%" size="1">
+			<h3>Installation</h3>
+		  <p>If you are using <strong>4DPop</strong> component, you simply need to drag and drop the component <em>Regex Lab</em> directly under the <strong>4DPop</strong> palette. Otherwise you need to install it manually. Here the manual installation process :</p>
+<div class="Section1" align="left">
+    <ol>
+        <li>Create a <em>"Components"</em> folder next to the structure file of your database (".4db")*</li>
+        <li>Place the " <em>Regex Lab 4.4dbase</em>"** folder or an alias of this one in the <em>"Components"</em> folder</li>
+        <li>Open your database.</li>
+        <li>In the "On Startup Database Method", insert this code : <strong>Regex_Init</strong></li>
+        <li>Restart the database.</li>
+    </ol>
+
+	<p><em>*On Macintosh, 4D v11 databases are built in a package. You need to install the "Components" directory at the same level as your 4D structure file.4DB or .4DC</em></p>
+	<p><em>**On Macintosh the component is a package whose extension "4dbase" is not necessarily visible according to the adjustments of your preferences of display.</em> </p>
+	<hr align="center" width="100%" size="1px">
+	<h3>How to use</h3>
+        <p>Regex Lab provide 4 main functions : </p>
+        <ul><li>Match,</li>
+        <li>Substitution,</li>
+        <li>Split,</li>
+        <li>Extract</li>
+        </ul>
+        <hr align="center" width="100%" size="0.5px">
+        <h3>Match</h3>
+        <p>Matches a regular expression in a text. Match results are returned in a text array.</p>
+            <div class="maintable">
+                <div class="mheader">Regex_Match_Ptr (Pattern;Targeted_text;Match_Strings{;Match_Strings_Position{;Groups}})-> Result</div>
+                <div class="row firstrow">
+                    <div class="parameter">Parameter</div>
+                    <div class="type">Type</div>
+                    <div class="description">Description</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Pattern</div>
+                    <div class="type">Pointer</div>
+                    <div class="description">Pointer to a Text which contains the Pattern (regular expression)</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Targeted_text</div>
+                    <div class="type">Pointer</div>
+                    <div class="description">Pointer to the Targeted Text</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Match_Strings</div>
+                    <div class="type">Pointeur</div>
+                    <div class="description">Pointer which references a text array which will contain the matched strings</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Match_Strings_Position</div>
+                    <div class="type">Pointer</div>
+                    <div class="description">Pointer which reference a longint array of positions of matched strings (Optional)</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Groups</div>
+                    <div class="type">Pointer</div>
+                    <div class="description">Pointer to an array of long integer which provided the group number of each string found (Optional) *</div>
+                </div>
+                <div class="row lastrow">
+                  <div class="parameter">Result</div>
+                  <div class="type">Boolean</div>
+                  <div class="description"><strong>True</strong> if it matches at least one occurrence, otherwise <strong>False</strong>.</div>
+                 </div>
+			</div>
+            <br />
+            <br />
+            <div class="code4D">
+                <div class="example">Example 1</div>
+                <div class="code"><span class="c4d_locale">$Txt_Pattern</span>:="&lt;a\\s+.*?href\\s*=\\s*\\\&quot;(.*?)\\\&quot;.*?&gt;(.*?)&lt;/a&gt;(?!\\.jpg|.gif|.pdf)"<br />
+                <span class="c4d_locale">$Boo_regex_is_valid</span>:=<span class="c4d_method">Regex_Match_Ptr</span> (->$Txt_Pattern;->$Txt_Target_Text;->$tt_Match_Strings;->$tl_String_Position)</div>
+            </div>
+            <br />
+            <br />
+            <div class="code4D">
+            	<div class="example">Example 2</div>
+            	<div class="code"><span class="c4d_locale">$Txt_Pattern</span>:="^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?"<br />
+            	<span class="c4d_locale">$Boo_regex_is_valid</span>:=<span class="c4d_method">Regex_Match_Ptr</span> (->$Txt_Pattern;->$Txt_Target_Text;->$tt_Match_Strings;->$tl_String_Position;->$tl_Group)</div>
+            </div>
+            <p >* If you like to get each strings for each Pattern group, simply fill in the parameter<strong>Groups</strong>.</p>
+            
+			<hr align="center" width="100%" size="0.5px">	
+            
+			<h3>Substitution</h3>
+			<p>Substitutes all matches of a regular expression in a text with a replacement string expression. A resulting text after substitution is returned. Match results are returned in a string array, too.</p>
+            <div class="maintable">
+                <div class="mheader">Regex_Substitution_Ptr (Pattern;Targeted_text;Replacement_text;Match_strings;Resulting_text{;Match_Strings_Position{;Groups}}) -> Result</div>
+                <div class="row firstrow">
+                    <div class="parameter">Parameter</div>
+                    <div class="type">Type</div>
+                    <div class="description">Description</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Pattern</div>
+                    <div class="type">Pointer</div>
+                    <div class="description">Pointer to a Text which contains the Pattern (regular expression)</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Targeted_text</div>
+                    <div class="type">Pointer</div>
+                    <div class="description">Pointer to the Targeted Text</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Replacement_text</div>
+                    <div class="type">Pointer</div>
+                    <div class="description">Pointer to the replacement Text expression (regular expression)</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Match_strings</div>
+                    <div class="type">Pointer</div>
+                    <div class="description">Pointer which references a text array which will contain the matched strings</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Resulting_text</div>
+                    <div class="type">Pointer</div>
+                    <div class="description">Pointer to the Resulting Text after substitution</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Match_Strings_Position</div>
+                    <div class="type">Pointer</div>
+                    <div class="description">Pointer which reference a longint array of positions of matched strings (Optional)</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Groups</div>
+                    <div class="type">Pointer</div>
+                    <div class="description">Pointer to an array of long integer which provided the group number of each string found (Optional) *</div>
+                </div>
+                <div class="row lastrow">
+                  <div class="parameter">Result</div>
+                  <div class="type">Boolean</div>
+                  <div class="description"><strong>True</strong> if it matches at least one occurrence, otherwise <strong>False</strong>.</div>
+                 </div>
+			</div>
+            <br />
+            <br />
+            <div class="code4D">
+                <div class="example">Example 1</div>
+                <div class="code">
+	                <span class="c4d_locale">$Txt_Pattern</span>:="(\\[color=)(\\#?[A-Za-z/0-9]*)(\\])(.*?)(\\[\\/color])"//Pattern (regular expression)<br />
+	                <span class="c4d_locale">$vt_Replacement_Text</span>:="&lt;span style='font-color:\&quot;\\2\&quot;'&gt;\\4&lt;/span&gt;"//Remplacement text expression<br />
+                <span class="c4d_locale">$regex_is_valid</span>:=<span class="c4d_method">Regex_Substitution_Ptr</span> (->$Pattern; ->$vt_Target_Text; ->$vt_Replacement_Text; ->$tt_Match_Strings; ->$vt_Resulting_Text; ->$tl_String_Position)</div>
+            </div>
+            <br />
+            <br />
+            <div class="code4D">
+                <div class="example">Example 2</div>
+	                <span class="c4d_locale">$Txt_Pattern</span>:="(\\[color=)(\\#?[A-Za-z/0-9]*)(\\])(.*?)(\\[\\/color])"//Pattern (regular expression)<br />
+	                <span class="c4d_locale">$vt_Replacement_Text</span>:="&lt;span style='font-color:\&quot;\\2\&quot;'&gt;\\4&lt;/span&gt;"//Remplacement text expression<br />
+                <span class="c4d_locale">$regex_is_valid</span>:=<span class="c4d_method">Regex_Substitution_Ptr</span> (->$Pattern; ->$vt_Target_Text; ->$vt_Replacement_Text; ->$tt_Match_Strings; ->$vt_Resulting_Text; ->$tl_String_Position; ->tl_Group)</div>
+            </div>            
+			<p>* If you like to get each strings for each Pattern group, simply fill in the parameter<strong>Groups</strong>.</p>
+				<hr align="left" width="100%" size="1">
+			
+    <p><strong>Regex_Split_Ptr</strong></p>
+    			<p>Returns a string array containing the whole of the substrings having been extracted from the target text, using the pattern as a separator.</p>
+                <div class="maintable">
+                <div class="mheader">Regex_Split_Ptr (Pattern; Targeted_text; Match_strings{; Match_Strings_Position}) -> Result</div>
+                <div class="row firstrow">
+                    <div class="parameter">Parameter</div>
+                    <div class="type">Type</div>
+                    <div class="description">Description</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Pattern</div>
+                    <div class="type">Pointer</div>
+                    <div class="description">Pointer to a Text which contains the Pattern (regular expression)</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Targeted_text</div>
+                    <div class="type">Pointer</div>
+                    <div class="description">Pointer to the Targeted Text</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Match_strings</div>
+                    <div class="type">Pointer</div>
+                    <div class="description">Pointer which references a text array which will contain the matched strings</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Match_Strings_Position</div>
+                    <div class="type">Pointer</div>
+                    <div class="description">Pointer which reference a longint array of positions of matched strings (Optional)</div>
+                </div>
+                </div>
+                <div class="row lastrow">
+                  <div class="parameter">Result</div>
+                  <div class="type">Boolean</div>
+                  <div class="description"><strong>True</strong> if it matches at least one occurrence, otherwise <strong>False</strong>.</div>
+                 </div>
+			</div>
+            <br />
+            <br />
+            <br />
+            <br />            
+			<div class="code4D">
+                <div class="example">Example</div>
+                <div class="code">
+	                <span class="c4d_locale">$Pattern</span>:=",\\s+|,"`Pattern (regular expression)<br />
+					<span class="c4d_locale">$regex_is_valid</span>:=<span class="c4d_method">Regex_Split_Ptr</span> (->$Pattern;->$vt_Target_Text;->$tt_Match_Strings;->$tl_Separator_Position)</div>
+            </div>
+            <br />
+            <br />
+            <hr align="left" width="100%" size="1">
+             <p><strong>Regex_Extract_Ptr</strong></p>
+    <p>Extracts all matches of a regular expression in a text. Match results are returned in a string array and in a long integer array.</p>
+                <div class="maintable">
+                <div class="mheader">Regex_Extract_Ptr (Pattern; Targeted_text; Group_list; Match_strings; Element{; Match_Strings_Position}) -> Result</div>
+                <div class="row firstrow">
+                    <div class="parameter">Parameter</div>
+                    <div class="type">Type</div>
+                    <div class="description">Description</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Pattern</div>
+                    <div class="type">Pointer</div>
+                    <div class="description">Pointer to a Text which contains the Pattern (regular expression)</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Targeted_text</div>
+                    <div class="type">Pointer</div>
+                    <div class="description">Pointer to the Targeted Text</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Group_list</div>
+                    <div class="type">Pointer</div>
+                    <div class="description">Pointer to a Text which contains the list of group numbers to be extracted (using a comma as a separator)</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Match_strings</div>
+                    <div class="type">Pointer</div>
+                    <div class="description">Pointer which references a text array which will contain the matched strings</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Element</div>
+                    <div class="type">Pointer</div>
+                    <div class="description">Pointer which references a long integer (who contains the group number index). This array is synchronised with the Match_strings</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Match_Strings_Position</div>
+                    <div class="type">Pointeur</div>
+                    <div class="description">Pointer which reference a longint array of positions of matched strings (Optional)</div>
+                </div>
+                </div>
+                <div class="row lastrow">
+                  <div class="parameter">Result</div>
+                  <div class="type">Boolean</div>
+                  <div class="description"><strong>True</strong> if it matches at least one occurrence, otherwise <strong>False</strong>.</div>
+                 </div>
+			</div>
+            <br />
+            <br />
+            <br />
+            <br />
+			<div class="code4D">
+                <div class="example">Example</div>
+                <div class="code"><span class="c4d_locale">$Txt_Pattern</span>:="&lt;[a|A]\\s+.*?[href|HREF]\\s*=\\s*\&quot;(.*?)\&quot;.*?&gt;(.*?)&lt;/[a|A]&gt;"`Motif (expression régulière)<br />
+	            <span class="c4d_locale">$Txt_Group_List</span>:="1,2"<br />
+                <span class="c4d_locale">$regex_est_valide</span>:=<span class="c4d_method">Regex_Extract_Ptr</span> (->$Txt_Pattern;->$Txt_Target_Text;->$Txt_Group_List;->$tt_Match_Strings;->$tLon_element;->$tLon_String_Position)</div> 
+            </div>
+            <br />
+            <br />			
+		    <hr align="left" width="100%" size="1">
+		    <h2>The Lab</h2>
+			<p><em>"Regex Lab"</em> offers a laboratory for your test. To call this lab, simply insert the component method <strong>Regex_Lab_Windows</strong> in your code or execute this component method directly.</p>
+			<p>This is the window you will get :</p>
+			<p><img name="Regex_Lab_window" src="Images/Regex_Dial.png" width="768" height="615" alt=""></p>
+			<p>This lab enables you to test quickly the various functions with your own patterns and targeted texts.</p>
+			<p>Various examples are provided for each function.</p>
+			<hr align="left" width="100%" size="1">
+			<h2>4D Pop Compatible</h2>
+			<p>If you are using the <em>"4D Pop"</em> component, the <em>"Regex Lab"</em> tool icon will automatically appear in the tool palette; simply click on it in order to display and use it.</p>
+			<p>Clicking the icon will launch the <em>Regex Lab</em> window</p>
+			<div class="Section1" align="left">
+				<p>If one or more compatible components are installed, they appear as buttons. </p>
+				<img src="Images/Palette.png" alt="" height="51" width="720" border="0">
+				<p>Vous pouvez déplacer la palette par sa barre de titre, la placer à droite ou à gauche de l'écran. La position de la palette est mémorisée.</p>
+			<div class="Section1" align="left">
+			  <hr align="left" width="100%" size="1">
+			  <h2>Copyright</h2>
+			  <p>MIT Licence <a href="http://en.wikipedia.org/wiki/MIT_License">http://en.wikipedia.org/wiki/MIT_License</a></p>
+			  <p></p>
+			  <p>© 2007- 2015 - <a href="http://www.ajar.ch/">AJAR S.A. </a></p>
+			  <p><a href="http://www.ajar.ch/"><img src="../../Common/logo_ajar.png" alt="" border="0"></a></p>
+
+			  <p></p>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>

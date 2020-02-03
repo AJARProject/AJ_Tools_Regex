@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+   <!--                     Translation file.This file is distributed under the same license as the product package.-->
+<xliff version="1.0">
+   <file datatype="x-STR#" original="undefined" product-version="1.1" source-language="en" target-language="fr">
+      <header>
+         <prop-group name="Xliff-Editor.4dbase">
+            <prop prop-type="version">1.0</prop>
+         </prop-group>
+      </header>
+      <body>
+         <group id="01" resname="Group label">
+            <trans-unit id="1" resname="Test_name">
+               <source>Test name</source>
+               <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="2" resname="Pattern">
+               <source>Pattern</source>
+               <target>Motif</target>
+            </trans-unit>
+            <trans-unit id="3" resname="Target">
+               <source>Target text</source>
+               <target>Texte cible</target>
+            </trans-unit>
+            <trans-unit id="4" resname="Result">
+               <source>Result</source>
+               <target>Résultat</target>
+            </trans-unit>
+            <trans-unit id="14" resname="Replacement">
+               <source>Replacement text</source>
+               <target>Texte de remplacement</target>
+            </trans-unit>
+            <trans-unit id="16" resname="Extract">
+               <source>Extract groups</source>
+               <target>Groupes à extraire</target>
+            </trans-unit>
+            <trans-unit id="19" resname="Description">
+               <source>Description</source>
+               <target>Description</target>
+            </trans-unit>
+            <trans-unit id="86" resname="Details">
+               <source>Details</source>
+               <target>Détails</target>
+            </trans-unit>
+            <trans-unit id="87" resname="GroupSplit">
+               <source>Capture Group split display</source>
+               <target>Afficher chaque groupe de capture</target>
+            </trans-unit>
+         </group>
+         <group id="4" resname="Group bouton">
+            <trans-unit id="5" resname="New test">
+               <source>New</source>
+               <target>Nouveau</target>
+            </trans-unit>
+            <trans-unit id="6" resname="Save test">
+               <source>Save</source>
+               <target>Enregistrer</target>
+            </trans-unit>
+            <trans-unit id="83" resname="Duplicate test">
+               <source>Duplicate</source>
+               <target>Dupliquer</target>
+            </trans-unit>
+            <trans-unit id="7" resname="Delete test">
+               <source>Delete</source>
+               <target>Supprimer</target>
+            </trans-unit>
+            <trans-unit id="8" resname="Export">
+               <source>Export...</source>
+               <target>Exporter...</target>
+            </trans-unit>
+            <trans-unit id="9" resname="Import">
+               <source>Import...</source>
+               <target>Importer...</target>
+            </trans-unit>
+            <trans-unit id="10" resname="Test">
+               <source>Test</source>
+               <target>Tester</target>
+            </trans-unit>
+            <trans-unit id="27" resname="WS_Push">
+               <source>Publish...</source>
+               <target>Publier...</target>
+            </trans-unit>
+            <trans-unit id="56" resname="WS_Get">
+               <source>Get...</source>
+               <target>Lire...</target>
+            </trans-unit>
+         </group>
+         <group id="10" resname="Listbox">
+            <trans-unit id="11" resname="Pos">
+               <source>Pos.</source>
+               <target>Pos.</target>
+            </trans-unit>
+            <trans-unit id="12" resname="Length">
+               <source>Length</source>
+               <target>Longueur</target>
+            </trans-unit>
+            <trans-unit id="13" resname="String">
+               <source>String</source>
+               <target>Chaîne</target>
+            </trans-unit>
+            <trans-unit id="15" resname="El">
+               <source>El.</source>
+               <target>El.</target>
+            </trans-unit>
+            <trans-unit id="80" resname="Group">
+               <source>Group</source>
+               <target>Groupe</target>
+            </trans-unit>
+         </group>
+         <group id="10" resname="Group comments">
+            <trans-unit id="17" resname="Group list">
+               <source>Use a comma to separate each group (Eg : 2, 3)</source>
+               <target>Utilisez une virgule comme séparateur (Ex. : 2, 3)</target>
+            </trans-unit>
+         </group>
+         <group id="10" resname="Group tips">
+            <trans-unit id="18" resname="Clipboardtip">
+               <source>Shift+Clic -&gt; copy only the expression</source>
+               <target>Shift+Clic -&gt; copie uniquement l'expression</target>
+            </trans-unit>
+         </group>
+         <group id="3" resname="Group Var">
+            <trans-unit id="20" resname="True">
+               <source>True</source>
+               <target>Vrai</target>
+            </trans-unit>
+            <trans-unit id="21" resname="False">
+               <source>False</source>
+               <target>Faux</target>
+            </trans-unit>
+            <trans-unit id="22" resname="Matching">
+               <source>Matching</source>
+               <target>Trouver</target>
+            </trans-unit>
+            <trans-unit id="23" resname="Substitution">
+               <source>Substitution</source>
+               <target>Substituer</target>
+            </trans-unit>
+            <trans-unit id="24" resname="Splitting">
+               <source>Splitting</source>
+               <target>Découper</target>
+            </trans-unit>
+            <trans-unit id="25" resname="Extracting">
+               <source>Extracting</source>
+               <target>Extraire</target>
+            </trans-unit>
+            <trans-unit id="28" resname="thank_you">
+               <source>Thank you for your contribution!</source>
+               <target>Merci pour votre contribution !</target>
+            </trans-unit>
+            <trans-unit id="29" resname="ID_number">
+               <source>The ID number is : </source>
+               <target>Le numéro d'ID est : </target>
+            </trans-unit>
+            <trans-unit id="30" resname="ask_email">
+               <source>Your e-mail address :</source>
+               <target>Veuillez indiquer votre adresse e-mail :</target>
+            </trans-unit>
+            <trans-unit id="31" resname="ask_name">
+               <source>Please indicate your name, first name and/or another mentions that you want to publish :</source>
+               <target>Veuillez indiquer votre nom, prénom et/ou autre mentions que vous désirez voir mentionné :</target>
+            </trans-unit>
+            <trans-unit id="32" resname="Validate">
+               <source>Validate</source>
+               <target>Valider</target>
+            </trans-unit>
+            <trans-unit id="33" resname="Cancel">
+               <source>Cancel</source>
+               <target>Annuler</target>
+            </trans-unit>
+            <trans-unit id="84" resname="Choose_typeOfRule">
+               <source>Choose in which group of rules you want to apply the current pattern:</source>
+               <target>Choisissez dans quel groupe de règles vous souhaitez appliquer le motif courant :</target>
+            </trans-unit>
+            <trans-unit id="85" resname="Copy">
+               <source>Copy</source>
+               <target>Copie</target>
+            </trans-unit>
+         </group>
+         <group id="3" resname="Group Menu">
+            <trans-unit id="34" resname="Launch">
+               <source>Launch the Regex Lab</source>
+               <target>Lancer le laboratoire de test</target>
+            </trans-unit>
+            <trans-unit id="35" resname="CommonMenuItemUndo">
+               <source>Undo</source>
+               <target>Annuler Edition</target>
+            </trans-unit>
+            <trans-unit id="36" resname="CommonMenuItemCut">
+               <source>Cut</source>
+               <target>Couper</target>
+            </trans-unit>
+            <trans-unit id="37" resname="CommonMenuItemCopy">
+               <source>Copy</source>
+               <target>Copier</target>
+            </trans-unit>
+            <trans-unit id="38" resname="CommonMenuItemPaste">
+               <source>Paste</source>
+               <target>Coller</target>
+            </trans-unit>
+            <trans-unit id="39" resname="CommonMenuItemClear">
+               <source>Clear</source>
+               <target>Effacer</target>
+            </trans-unit>
+            <trans-unit id="40" resname="CommonMenuItemSelectAll">
+               <source>Select All</source>
+               <target>Tout Selectionner</target>
+            </trans-unit>
+            <trans-unit id="41" resname="CommonMenuItemShowClipboard">
+               <source>Show Clipboard</source>
+               <target>Afficher le Presse-papiers</target>
+            </trans-unit>
+            <trans-unit id="42" resname="CommonMenuItemDesign">
+               <source>Design</source>
+               <target>Développement</target>
+            </trans-unit>
+            <trans-unit id="43" resname="CommonMenuItemQuit">
+               <source>Quit</source>
+               <target>Quitter</target>
+            </trans-unit>
+            <trans-unit id="44" resname="CommonMenuItemClose">
+               <source>Close the window</source>
+               <target>Fermer la fenêtre</target>
+            </trans-unit>
+         </group>
+         <group id="3" resname="Authentification">
+            <trans-unit id="44" resname="Info1">
+               <source>The Regex rules are stored on 4DBB Forums using a web service. The authentification is secured.
+
+You can consult the regex rules published, here :</source>
+               <target>Les règles de Regex sont transférées sur le forum 4DBB en utilisant un service web. L'autentification est sécurisée.
+
+Les règles de Regex sont publiées sur le forum :</target>
+            </trans-unit>
+            <trans-unit id="45" resname="Login1">
+               <source>Connection</source>
+               <target>Connexion</target>
+            </trans-unit>
+            <trans-unit id="46" resname="Login2">
+               <source>I already have an account:</source>
+               <target>Je possède déjà un compte d'accès :</target>
+            </trans-unit>
+            <trans-unit id="47" resname="Login3">
+               <source>Login or E-mail (*)</source>
+               <target>Identifiant ou adresse e-mail (*)</target>
+            </trans-unit>
+            <trans-unit id="48" resname="Login4">
+               <source>Password</source>
+               <target>Mot de passe</target>
+            </trans-unit>
+            <trans-unit id="49" resname="Login5">
+               <source>(*) E-mail address used for your 4DBB Account</source>
+               <target>(*) Adresse e-mail associée à votre compte 4DBB</target>
+            </trans-unit>
+            <trans-unit id="50" resname="Login6">
+               <source>Display the password</source>
+               <target>Afficher le mot de passe</target>
+            </trans-unit>
+            <trans-unit id="51" resname="Login7">
+               <source>Connect</source>
+               <target>Se connecter</target>
+            </trans-unit>
+            <trans-unit id="52" resname="Login8">
+               <source>Registration</source>
+               <target>Enregistrement</target>
+            </trans-unit>
+            <trans-unit id="54" resname="Login9">
+               <source>I do not have an account yet:</source>
+               <target>Je ne possède pas encore de compte d'accès :</target>
+            </trans-unit>
+            <trans-unit id="55" resname="Login10">
+               <source>Register</source>
+               <target>S'enregistrer</target>
+            </trans-unit>
+            <trans-unit id="56" resname="InfoGet">
+               <source>You can get all the regex rules provided by different members and stored on 4DBB Forum's server.
+
+You can consult the regex rules published, here :</source>
+               <target>Nous vous proposons de pouvoir récupérer des règles Regex mise à disposition par différents contributeurs et centraliées sur le serveur des forums 4DBB.
+Les règles de Regex sont publiées sur le forum :</target>
+            </trans-unit>
+            <trans-unit id="57" resname="New_regex">
+               <source>New regex imported : </source>
+               <target>Nouveaux regex importés : </target>
+            </trans-unit>
+            <trans-unit id="58" resname="Update_regex">
+               <source>Regex updated locally : </source>
+               <target>Regex modifié(s) localement : </target>
+            </trans-unit>
+            <trans-unit id="59" resname="Cancel">
+               <source>Cancel</source>
+               <target>Annuler</target>
+            </trans-unit>
+         </group>
+         <group id="10" resname="Group Error">
+            <trans-unit id="60" resname="Error_Match_Param_0">
+               <source>4 parameters are missing. See the Regex_Match Documentation...</source>
+               <target>Il manque 4 paramètres. Voir la documentation de la fonction Regex_Match...</target>
+            </trans-unit>
+            <trans-unit id="61" resname="Error_Match_Param_1">
+               <source>3 parameters are missing. See the Regex_Match Documentation...</source>
+               <target>Il manque 3 paramètres. Voir la documentation de la fonction Regex_Match...</target>
+            </trans-unit>
+            <trans-unit id="62" resname="Error_Match_Param_2">
+               <source>2 parameters are missing. See the Regex_Match Documentation...</source>
+               <target>Il manque 2 paramètres. Voir la documentation de la fonction Regex_Match...</target>
+            </trans-unit>
+            <trans-unit id="63" resname="Error_Match_Param_3">
+               <source>1 parameter is missing. See the Regex_Match Documentation...</source>
+               <target>Il manque 1 paramètre. Voir la documentation de la fonction Regex_Match...</target>
+            </trans-unit>
+            <trans-unit id="64" resname="Error_Split_Param_0">
+               <source>4 parameters are missing. See the Regex_Split Documentation...</source>
+               <target>Il manque 4 paramètres. Voir la documentation de la fonction Regex_Split...</target>
+            </trans-unit>
+            <trans-unit id="65" resname="Error_Split_Param_1">
+               <source>3 parameters are missing. See the Regex_Split Documentation...</source>
+               <target>Il manque 3 paramètres. Voir la documentation de la fonction Regex_Split...</target>
+            </trans-unit>
+            <trans-unit id="66" resname="Error_Split_Param_2">
+               <source>2 parameters are missing. See the Regex_Split Documentation...</source>
+               <target>Il manque 2 paramètres. Voir la documentation de la fonction Regex_Split...</target>
+            </trans-unit>
+            <trans-unit id="67" resname="Error_Split_Param_3">
+               <source>1 parameter is missing. See the Regex_Split Documentation...</source>
+               <target>Il manque 1 paramètre. Voir la documentation de la fonction Regex_Split...</target>
+            </trans-unit>
+            <trans-unit id="70" resname="Error_Extract_Param_0">
+               <source>6 parameters are missing. See the Regex_Extract Documentation...</source>
+               <target>Il manque 6 paramètres. Voir la documentation de la fonction Regex_Extract...</target>
+            </trans-unit>
+            <trans-unit id="71" resname="Error_Extract_Param_1">
+               <source>5 parameters are missing. See the Regex_Extract Documentation...</source>
+               <target>Il manque 5 paramètres. Voir la documentation de la fonction Regex_Extract...</target>
+            </trans-unit>
+            <trans-unit id="72" resname="Error_Extract_Param_2">
+               <source>4 parameters are missing. See the Regex_Extract Documentation...</source>
+               <target>Il manque 4 paramètres. Voir la documentation de la fonction Regex_Extract...</target>
+            </trans-unit>
+            <trans-unit id="73" resname="Error_Extract_Param_3">
+               <source>3 parameters are missing. See the Regex_Extract Documentation...</source>
+               <target>Il manque 3 paramètres. Voir la documentation de la fonction Regex_Extract...</target>
+            </trans-unit>
+            <trans-unit id="74" resname="Error_Extract_Param_4">
+               <source>2 parameters are missing. See the Regex_Extract Documentation...</source>
+               <target>Il manque 2 paramètres. Voir la documentation de la fonction Regex_Extract...</target>
+            </trans-unit>
+            <trans-unit id="75" resname="Error_Extract_Param_5">
+               <source>1 parameter is missing. See the Regex_Extract Documentation...</source>
+               <target>Il manque 1 paramètre. Voir la documentation de la fonction Regex_Extract...</target>
+            </trans-unit>
+            <trans-unit id="76" resname="Error_Subst_Param_0">
+               <source>6 parameters are missing. See the Regex_Substitution Documentation...</source>
+               <target>Il manque 6 paramètres. Voir la documentation de la fonction Regex_Substitution...</target>
+            </trans-unit>
+            <trans-unit id="77" resname="Error_Subst_Param_1">
+               <source>5 parameters are missing. See the Regex_Substitution Documentation...</source>
+               <target>Il manque 5 paramètres. Voir la documentation de la fonction Regex_Substitution...</target>
+            </trans-unit>
+            <trans-unit id="78" resname="Error_Subst_Param_2">
+               <source>4 parameters are missing. See the Regex_Substitution Documentation...</source>
+               <target>Il manque 4 paramètres. Voir la documentation de la fonction Regex_Substitution...</target>
+            </trans-unit>
+            <trans-unit id="79" resname="Error_Subst_Param_3">
+               <source>3 parameters are missing. See the Regex_Substitution Documentation...</source>
+               <target>Il manque 3 paramètres. Voir la documentation de la fonction Regex_Substitution...</target>
+            </trans-unit>
+            <trans-unit id="80" resname="Error_Subst_Param_4">
+               <source>2 parameters are missing. See the Regex_Substitution Documentation...</source>
+               <target>Il manque 2 paramètres. Voir la documentation de la fonction Regex_Substitution...</target>
+            </trans-unit>
+            <trans-unit id="81" resname="Error_Subst_Param_5">
+               <source>1 parameter is missing. See the Regex_Substitution Documentation...</source>
+               <target>Il manque 1 paramètre. Voir la documentation de la fonction Regex_Substitution...</target>
+            </trans-unit>
+         </group>
+         <group id="10" resname="Password">
+            <trans-unit id="81" resname="Error_Param_0">
+               <source>Parameters are missing</source>
+               <target>Les paramètres sont manquants</target>
+            </trans-unit>
+            <trans-unit id="83" resname="Duplicate test">
+               <source>Duplicate</source>
+               <target>Dupliquer</target>
+            </trans-unit>
+         </group>
+      </body>
+   </file>
+</xliff>

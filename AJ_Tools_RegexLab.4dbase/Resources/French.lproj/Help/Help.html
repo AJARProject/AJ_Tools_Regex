@@ -1,0 +1,459 @@
+<html>
+
+	<head>
+		<title>Regex Lab 4 : Lisez-moi</title>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <style type="text/css">
+<!--
+body{
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 12px;
+}
+.maintable {
+    margin: 0 auto;
+    width: 100%;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: #666;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #ebebeb;
+	vertical-align: 0;
+	overflow: hidden;
+    background: #ebebeb;
+}
+
+.mheader {
+    float: left;
+    width: calc(100% - 28px);
+    background: #ebebeb;
+	font-size: 12px;
+	border-bottom: 1px solid #c0c0c0;
+	border-block-start-width: px;
+	padding: 5px 3px;
+	margin-left: 10px;
+}
+
+.row{   
+    width:100%; 
+    display: flex;
+    line-height: 20px;
+	font-size: 11px;
+}
+.firstrow{
+	padding-top: 5px;
+	font-weight: bold;
+}
+.lastrow{
+	margin-bottom: 5px;
+}
+.parameter {
+    background: #ebebeb;
+    width: 15%;
+    float: left;
+	padding-left: 10px;
+	border-right: 1px solid #c0c0c0;
+}
+.type {
+    background: #ebebeb;
+    float: left;
+    width : 15%;
+	height: auto;
+	padding-left: 10px;
+	border-right: 1px solid #c0c0c0;
+}
+
+.description {
+    background: #ebebeb;
+    float: left;
+	padding-left: 10px;
+	width: calc(70% - 38px);
+}
+.code4D {
+	background-color: rgb(255, 252, 223);
+
+	padding: 10px;
+	border: 1px solid #e6e0aa;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.example{
+	font-size: 12px;
+	position:  relative;
+	top:  -2em;
+	background-color: #feffff;
+	border-style: solid;
+	border: 1px solid #e6e0aa;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding: 3px;
+	display: inline-block;
+}
+
+.c4d_locale {
+	font-size: inherit;
+	color: #0096ff;
+}
+
+.c4d_constant {
+	font-size: inherit;
+	text-decoration: underline;
+}
+
+.c4d_command {
+	color: #941100;
+	font-size: inherit;
+	font-weight: bold;
+}
+
+.c4d_keyword {
+	color: #008e00;
+	font-weight: bold;
+	font-size: inherit;
+}
+
+.c4d_method {
+	color: #005392;
+	font-weight: bold;
+	font-style: italic;
+	font-size: inherit;
+}
+
+.c4d_comment {
+	color: #a9a9a9;
+	font-size: inherit;
+}
+
+.code {
+	margin-top: -1.5em;
+	font: 11px 'Courier New', Courier, monospace;
+}
+
+.name_vi {
+	color: #661d99;
+	font: bold 60px 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+.name_or {
+	color: #fd5e00;
+}
+
+.name_release {
+	color: #818181;
+}
+
+
+
+-->
+        </style>
+        <link href="http://www.ajar.ch/">
+</head>
+
+	<body leftmargin="20" marginheight="20" marginwidth="20" topmargin="20">
+		<div class="Section1">
+			
+		</div>
+		<div class="Section1" align="left">
+			<hr>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="20%"><div class="name_vi">Reg<span class="name_or">Ex</span><br />La<span class="name_or">bs</span> <span class="name_release">4</span></div></td>
+<td valign="middle">
+						<table width="100%" border="0" cellspacing="0" cellpadding="4" height="119">
+							<tr>
+								<td valign="bottom">
+								<iframe src="../../Common/Localisation.html" frameborder="0" scrolling="no" align="middle" height="40" width="100%" noresize="true"></iframe>								</td>
+							</tr>
+						</table>
+				  </td>
+				</tr>
+			</table>
+			<hr>
+			<p>Regex Lab est un composant vous offrant des fonctions de traitement de chaines très puissantes. Pour cela il utilise la nouvelle fonction <strong>trouver regex</strong> fournie depuis la version 4D V11 SQL.</p>
+			<p>La fonction <strong>trouver regex</strong> utilise la librairie <a href="http://www.icu-project.org/userguide/regexp.html">ICU Regex engine</a>.</p>
+			<hr align="left" width="100%" size="1">
+			<h3>Installation</h3>
+		  <p>Si vous utilisez <strong>4DPop</strong>, il vous suffit de glisser déposer le composant <em>Regex Lab</em> sur la palette de <strong>4DPop</strong> pour l'installer. Sinon, voici la procédure d'installation manuelle :</p>
+<div class="Section1" align="left">
+    <ol>
+        <li>Créez un dossier "<em>Components</em>" au niveau du fichier de structure de votre base (".4db")*</li>
+        <li>Placer le composant "<I>Regex Lab.4dbase</I>"** ou un alias de ce dernier dans le dossier "<I>Components</I>"</li>
+        <li>Ouvrez votre base.</li>
+        <li>Dans la méthode base "Sur ouverture", insérez le code suivant</li>
+        <li>Redémarrez votre base.</li>
+    </ol>
+
+	<p><em>*Sur Macintosh, les bases sont dans des packages. Il faut donc placer le dossier "Components" dans le package au même niveau que le fichier .4DB ou .4DC</em></p>
+	<p><em>**Sur Macintosh le composant est un package dont l'extension ".4dbase" n'est pas obligatoirement visible en fonction des réglages de vos préférences d'affichage.</em> </p>
+	<hr align="center" width="100%" size="1px">
+	<h3>Utilisation</h3>
+        <p>Regex Lab offre 4 principales fonctions : </p>
+        <ul><li>Trouver (Match),</li>
+        <li>Substituer (Substitution),</li>
+        <li>Découper (Split),</li>
+        <li>Extraire (Extract)</li>
+        </ul>
+        <hr align="center" width="100%" size="0.5px">
+        <h3>Trouver (Match)</h3>
+        
+            <div class="maintable">
+                <div class="mheader">Regex_Match_Ptr (Motif;Texte_à_traiter;Chaines_trouvées{;Positions_ChainesTrouvées{;Groupes}})-> Résultat</div>
+                <div class="row firstrow">
+                    <div class="parameter">Paramètre</div>
+                    <div class="type">Type</div>
+                    <div class="description">Description</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Motif</div>
+                    <div class="type">Pointeur</div>
+                    <div class="description">Texte qui contient le Motif (expression régulière)</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Texte_à_traiter</div>
+                    <div class="type">Pointeur</div>
+                    <div class="description">Pointeur sur le Texte à traiter</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Chaines_trouvées</div>
+                    <div class="type">Pointeur</div>
+                    <div class="description">Pointeur sur un tableau de type texte qui contiendra les chaines trouvées</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Positions_ChainesTrouvées</div>
+                    <div class="type">Pointeur</div>
+                    <div class="description">Pointeur sur un tableau de type entier long qui fourni chaque position des chaines trouvées  (Optionnel)</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Groupes</div>
+                    <div class="type">Pointeur</div>
+                    <div class="description">Pointeur sur un tableau de type entier long qui fourni le numéro du groupe de chaque chaine trouvée (Optionnel) *</div>
+                </div>
+                <div class="row lastrow">
+                  <div class="parameter">Résultat</div>
+                  <div class="type">Booléen</div>
+                  <div class="description">Vrai = exécution correcte, Faux = erreur d’exécution</div>
+                 </div>
+			</div>
+            <br />
+            <br />
+            <div class="code4D">
+                <div class="example">Exemple 1</div>
+                <div class="code"><span class="c4d_locale">$Txt_Pattern</span>:="&lt;a\\s+.*?href\\s*=\\s*\\\&quot;(.*?)\\\&quot;.*?&gt;(.*?)&lt;/a&gt;(?!\\.jpg|.gif|.pdf)"<br />
+                <span class="c4d_locale">$Boo_regex_is_valid</span>:=<span class="c4d_method">Regex_Match_Ptr</span> (->$Txt_Pattern;->$Txt_Target_Text;->$tt_Match_Strings;->$tLon_String_Position)</div>
+            </div>
+            <br />
+            <br />
+            <div class="code4D">
+            	<div class="example">Exemple 2</div>
+            	<div class="code"><span class="c4d_locale">$Txt_Pattern</span>:="^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?"<br />
+            	<span class="c4d_locale">$Boo_regex_is_valid</span>:=<span class="c4d_method">Regex_Match_Ptr</span> (->$Txt_Pattern;->$Txt_Target_Text;->$tt_Match_Strings;->$tLon_String_Position;->tLon_Group)</div>
+            </div>
+            <p >* Si vous désirez obtenir les chaines trouvées pour chaque groupe du Motif de recherche, il vous suffit de renseigner le paramètre <strong>Groupes</strong>.</p>
+            
+			<hr align="center" width="100%" size="0.5px">	
+            
+			<h3>Substituer (Substitution)</h3>
+            <div class="maintable">
+                <div class="mheader">Regex_Substitution_Ptr (Motif;Texte_à_traiter;Chaine_de_Substitution;Chaines_trouvées;Texte_traité{;Positions_ChainesTrouvées{;Groupes}}) -> Résultat</div>
+                <div class="row firstrow">
+                    <div class="parameter">Paramètre</div>
+                    <div class="type">Type</div>
+                    <div class="description">Description</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Motif</div>
+                    <div class="type">Pointeur</div>
+                    <div class="description">Texte qui contient le Motif (expression régulière)</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Texte_à_traiter</div>
+                    <div class="type">Pointeur</div>
+                    <div class="description">Pointeur sur le Texte à traiter</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Chaine_de_Substitution</div>
+                    <div class="type">Pointeur</div>
+                    <div class="description">Pointeur sur la variable de type texte qui contient l'expression de remplacement (expression régulière)</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Chaines_trouvées</div>
+                    <div class="type">Pointeur</div>
+                    <div class="description">Pointeur sur un tableau de type texte qui contiendra les chaines trouvées</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Positions_ChainesTrouvées</div>
+                    <div class="type">Pointeur</div>
+                    <div class="description">Pointeur sur un tableau de type entier long qui fourni chaque position des chaines trouvées  (Optionnel)</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Groupes</div>
+                    <div class="type">Pointeur</div>
+                    <div class="description">Pointeur sur un tableau de type entier long qui fourni le numéro du groupe de chaque chaine trouvée (Optionnel) *</div>
+                </div>
+                <div class="row lastrow">
+                  <div class="parameter">Résultat</div>
+                  <div class="type">Booléen</div>
+                  <div class="description">Vrai = exécution correcte et au moins une occurence trouvée, Faux = erreur d’exécution</div>
+                 </div>
+			</div>
+            <br />
+            <br />
+            <div class="code4D">
+                <div class="example">Exemple 1</div>
+                <div class="code"><span class="c4d_locale">$Txt_Pattern</span>:="(\\[color=)(\\#?[A-Za-z/0-9]*)(\\])(.*?)(\\[\\/color])"`Motif (expression régulière)<br />
+                <span class="c4d_locale">$regex_est_valide</span>:=<span class="c4d_method">Regex_Substitution_Ptr</span> (->$Motif; ->$vt_Texte_Cible; ->$ExpressiondeRemplacement; ->$tt_Chaine_Trouvees; ->$vt_Texte_apres_Substitution)</div>
+            </div>
+            <br />
+            <br />
+            <div class="code4D">
+                <div class="example">Exemple 2</div>
+                <div class="code"><span class="c4d_locale">$Txt_Pattern</span>:="(\\[color=)(\\#?[A-Za-z/0-9]*)(\\])(.*?)(\\[\\/color])"`Motif (expression régulière)<br />
+                <span class="c4d_locale">$regex_est_valide</span>:=<span class="c4d_method">Regex_Substitution_Ptr</span> (->$Motif; ->$vt_Texte_Cible; ->$ExpressiondeRemplacement; ->$tt_Chaine_Trouvees; ->$vt_Texte_apres_Substitution; ->$tl_Position_Chaine;->tl_Group)</div>
+            </div>            
+			<p>* Si vous désirez obtenir les chaines trouvées pour chaque groupe du Motif de recherche, il vous suffit de renseigner le paramètre <strong>Groupes</strong>.</p>
+				<hr align="left" width="100%" size="1">
+			
+    <p><strong>Regex_Split_Ptr</strong></p>
+                <div class="maintable">
+                <div class="mheader">Regex_Split_Ptr (Motif; Texte_à_traiter; Chaine_de_Substitution; Chaines_trouvées{; Positions_ChainesTrouvées}) -> Résultat</div>
+                <div class="row firstrow">
+                    <div class="parameter">Paramètre</div>
+                    <div class="type">Type</div>
+                    <div class="description">Description</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Motif</div>
+                    <div class="type">Pointeur</div>
+                    <div class="description">Texte qui contient le Motif (expression régulière)</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Texte_à_traiter</div>
+                    <div class="type">Pointeur</div>
+                    <div class="description">Pointeur sur le Texte à traiter</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Chaine_de_Substitution</div>
+                    <div class="type">Pointeur</div>
+                    <div class="description">Pointeur sur la variable de type texte qui contient l'expression de remplacement (expression régulière)</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Chaines_trouvées</div>
+                    <div class="type">Pointeur</div>
+                    <div class="description">Pointeur sur un tableau de type texte qui contiendra les chaines trouvées</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Positions_ChainesTrouvées</div>
+                    <div class="type">Pointeur</div>
+                    <div class="description">Pointeur sur un tableau de type entier long qui fourni chaque position des chaines trouvées (Optionnel)</div>
+                </div>
+                </div>
+                <div class="row lastrow">
+                  <div class="parameter">Résultat</div>
+                  <div class="type">Booléen</div>
+                  <div class="description">Vrai = exécution correcte et au moins une occurence trouvée, Faux = erreur d’exécution</div>
+                 </div>
+			</div>
+            <br />
+            <br />
+            <p>Retourne un tableau de type chaine contenant l'ensemble des sous-chaines  ayant été extraites du texte  en utilisant le motif comme séparateur.</p>
+            <br />
+            <br />            
+			<div class="code4D">
+                <div class="example">Exemple</div>
+                <div class="code"><span class="c4d_locale">$Txt_Pattern</span>:=",\\s+|,"`Motif (expression régulière)<br />
+                <span class="c4d_locale">$regex_est_valide</span>:=<span class="c4d_method">Regex_Split_Ptr</span> (->$Txt_Pattern;->$Txt_Target_Text;->$tt_Match_Strings;->$tLon_Separator_Position)</div>
+            </div>
+            <br />
+            <br />
+            <hr align="left" width="100%" size="1">
+             <p><strong>Regex_Extract_Ptr</strong></p>
+    <p>Retourne un tableau de type chaine contenant l'ensemble des chaines répondant au motif de recherche et le texte après traitement de substitution.</p>
+                <div class="maintable">
+                <div class="mheader">Regex_Extract_Ptr (Motif; Texte_à_traiter; Liste_Groupes; Chaines_trouvées; Groupes{; Positions_ChainesTrouvées}) -> Résultat</div>
+                <div class="row firstrow">
+                    <div class="parameter">Paramètre</div>
+                    <div class="type">Type</div>
+                    <div class="description">Description</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Motif</div>
+                    <div class="type">Pointeur</div>
+                    <div class="description">Texte qui contient le Motif (expression régulière)</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Texte_à_traiter</div>
+                    <div class="type">Pointeur</div>
+                    <div class="description">Pointeur sur le Texte à traiter</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Liste_Groupes</div>
+                    <div class="type">Pointeur</div>
+                    <div class="description">Pointeur sur le Texte décrivant la liste des groupes à extraire (le séparateur est une virgule)</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Chaines_trouvées</div>
+                    <div class="type">Pointeur</div>
+                    <div class="description">Pointeur sur un tableau de type texte qui contiendra les chaines trouvées</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Groupes</div>
+                    <div class="type">Pointeur</div>
+                    <div class="description">Pointeur sur un tableau de type entier long qui fourni le numéro du groupe de chaque chaine trouvée *</div>
+                </div>
+                <div class="row">
+                    <div class="parameter">Positions_ChainesTrouvées</div>
+                    <div class="type">Pointeur</div>
+                    <div class="description">Pointeur sur un tableau de type entier long qui fourni chaque position des chaines trouvées (Optionnel)</div>
+                </div>
+                </div>
+                <div class="row lastrow">
+                  <div class="parameter">Résultat</div>
+                  <div class="type">Booléen</div>
+                  <div class="description">Vrai = exécution correcte et au moins une occurence trouvée, Faux = erreur d’exécution</div>
+                 </div>
+			</div>
+            <br />
+            <br />
+            <br />
+            <br />
+			<div class="code4D">
+                <div class="example">Exemple</div>
+                <div class="code"><span class="c4d_locale">$Txt_Pattern</span>:="&lt;[a|A]\\s+.*?[href|HREF]\\s*=\\s*\&quot;(.*?)\&quot;.*?&gt;(.*?)&lt;/[a|A]&gt;"`Motif (expression régulière)<br />
+	            <span class="c4d_locale">$Txt_Group_List</span>:="1,2"<br />
+                <span class="c4d_locale">$regex_est_valide</span>:=<span class="c4d_method">Regex_Extract_Ptr</span> (->$Txt_Pattern;->$Txt_Target_Text;->$Txt_Group_List;->$tt_Match_Strings;->$tLon_element;->$tLon_String_Position)</div> 
+            </div>
+            <br />
+            <br />			
+		    <hr align="left" width="100%" size="1">
+		    <h2>Le laboratoire</h2>
+			<p>Regex Lab vous propose aussi un laboratoire de test qu'il suffit d'appeler en utilisant la méthode <strong>Regex_Lab_Windows</strong>.</p>
+			<p>Vous obtiendrez la fenêtre suivante :</p>
+			<p><img name="Regex_Lab_window" src="Images/Regex_Dial.png" width="768" height="615" alt=""></p>
+			<p>Ce laboratoire vous permettra de tester les différentes fonctions regex avec vos motifs de recherche.</p>
+			<p>Un certain nombre d'exemples sont  fournis en standard pour chacune des fonctions.</p>
+			<hr align="left" width="100%" size="1">
+			<h2>Compatible 4DPOP</h2>
+			<p>Regex Lab est un composant compatible avec 4DPop. Il sera automatiquement reconnu si 4DPop est installé dans votre base de données.</p>
+			<p>Un clic sur l'icone de Regex Lab lancera directement la fenêtre du laboratoire de test de Regex Lab</p>
+			<div class="Section1" align="left">
+				<p>Si un ou plusieurs composants compatibles sont installés, ils apparaissent sous la forme de boutons. </p>
+				<img src="Images/Palette.png" alt="" height="51" width="720" border="0">
+				<p>Vous pouvez déplacer la palette par sa barre de titre, la placer à droite ou à gauche de l'écran. La position de la palette est mémorisée.</p>
+			<div class="Section1" align="left">
+			  <hr align="left" width="100%" size="1">
+			  <h2>Copyright</h2>
+			  <p>MIT Licence <a href="http://en.wikipedia.org/wiki/MIT_License">http://en.wikipedia.org/wiki/MIT_License</a></p>
+			  <p></p>
+			  <p>© 2007- 2015 - <a href="http://www.ajar.ch/">AJAR S.A. </a></p>
+			  <p><a href="http://www.ajar.ch/"><img src="../../Common/logo_ajar.png" alt="" border="0"></a></p>
+			  <p></p>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
