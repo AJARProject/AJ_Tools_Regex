@@ -2,7 +2,7 @@
 
 "AJ_Tools_Regex" is a component that will add powerful text functions by using regular expression. "Regex Lab" uses the new command Match Regex provided with 4D V11 SQL.
 
-AJ_Tools_RegexLab is the application for your tests. Test
+AJ_Tools_RegexLab is the application for your tests.
 
 ## Getting Started
 
