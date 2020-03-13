@@ -1,13 +1,13 @@
 /HDI*
 /*.docx
 *.4darchive
+userPreferences.*
 *BuildApp*
 */Preferences/*
 Cache.xml
 Conversion*.json
 LogStyleSheet.xsl
 **/DerivedData/**
-!**/DerivedData/*.json
 data.match
 
 
