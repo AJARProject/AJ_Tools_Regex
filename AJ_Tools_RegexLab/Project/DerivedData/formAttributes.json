@@ -1,22 +1,28 @@
 ﻿{
 	"forms": {
 		"Split_subform": {
-			"timeStamp": ""
+			"timeStamp": "2020-02-05T11:10:08.278Z",
+			"destination": "detailScreen"
 		},
 		"Extract_subform": {
-			"timeStamp": ""
+			"timeStamp": "2020-02-05T11:10:08.274Z",
+			"destination": "detailScreen"
 		},
 		"Substitute_subform": {
-			"timeStamp": ""
+			"timeStamp": "2020-02-05T11:10:08.278Z",
+			"destination": "detailScreen"
 		},
 		"Match_subform": {
-			"timeStamp": ""
+			"timeStamp": "2020-02-05T11:10:08.274Z",
+			"destination": "detailScreen"
 		},
 		"Matches_subform": {
-			"timeStamp": ""
+			"timeStamp": "2020-02-05T11:10:08.274Z",
+			"destination": "detailScreen"
 		},
 		"RegexLab_form": {
-			"timeStamp": ""
+			"timeStamp": "2020-02-05T11:10:08.277Z",
+			"destination": "detailScreen"
 		}
 	}
 }

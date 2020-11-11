@@ -1,88 +1,88 @@
 ﻿{
 	"methods": {
 		"RegexLab_load_data": {
-			"timeStamp": "2020-02-03T11:08:48.520Z"
+			"timeStamp": "2020-02-05T11:10:08.280Z"
 		},
 		"RegexLab_Expression": {
-			"timeStamp": "2020-02-03T11:08:48.511Z"
+			"timeStamp": "2020-02-05T11:10:08.279Z"
 		},
 		"RegexLab_Init": {
-			"timeStamp": "2020-02-03T11:08:48.524Z"
+			"timeStamp": "2020-02-05T11:10:08.279Z"
 		},
 		"RegexLab_Init_ItemSelected": {
-			"timeStamp": "2020-02-03T11:08:48.515Z"
+			"timeStamp": "2020-02-05T11:10:08.279Z"
 		},
 		"RegexLab_Load_Current": {
-			"timeStamp": "2020-02-03T11:08:48.521Z"
+			"timeStamp": "2020-02-05T11:10:08.279Z"
 		},
 		"RegexLab_touch_Field": {
-			"timeStamp": "2020-02-03T11:08:48.522Z"
+			"timeStamp": "2020-02-05T11:10:08.281Z"
 		},
 		"RegexLab_Load_Examples": {
-			"timeStamp": "2020-02-03T11:08:48.514Z"
+			"timeStamp": "2020-02-05T11:10:08.279Z"
 		},
 		"RegexLab_save_data": {
-			"timeStamp": "2020-02-03T11:08:48.519Z"
+			"timeStamp": "2020-02-05T11:10:08.280Z"
 		},
 		"update_RegexID": {
-			"timeStamp": "2020-02-03T11:08:48.521Z"
+			"timeStamp": "2020-02-05T11:10:08.282Z"
 		},
 		"RegexLab_Windows": {
-			"timeStamp": "2020-02-03T11:08:48.514Z",
+			"timeStamp": "2020-02-05T11:10:08.280Z",
 			"attributes": {
 				"shared": true
 			}
 		},
 		"MNU_RELEASE_MENU": {
-			"timeStamp": "2020-02-03T11:08:48.516Z"
+			"timeStamp": "2020-02-05T11:10:08.279Z"
 		},
 		"IO ERROR HANDLER": {
-			"timeStamp": "2020-02-03T11:08:48.520Z"
+			"timeStamp": "2020-02-05T11:10:08.279Z"
 		},
 		"Regex_4DVersion": {
-			"timeStamp": "2020-02-03T11:08:48.509Z"
+			"timeStamp": "2020-02-05T11:10:08.281Z"
 		},
 		"findParam": {
-			"timeStamp": "2020-02-03T11:08:48.516Z"
+			"timeStamp": "2020-02-05T11:10:08.282Z"
 		},
 		"RegexLabSortName": {
-			"timeStamp": "2020-02-03T11:08:48.523Z"
+			"timeStamp": "2020-02-05T11:10:08.279Z"
 		},
 		"RegexLab_Menu": {
-			"timeStamp": "2020-02-03T11:08:48.513Z"
+			"timeStamp": "2020-02-05T11:10:08.279Z"
 		},
 		"RegexLab_Splitter_position": {
-			"timeStamp": "2020-02-03T11:08:48.512Z"
+			"timeStamp": "2020-02-05T11:10:08.280Z"
 		},
 		"RegexLab_test": {
-			"timeStamp": "2020-02-03T11:08:48.511Z"
+			"timeStamp": "2020-02-05T11:10:08.281Z"
 		},
 		"RegexLab_Close": {
-			"timeStamp": "2020-02-03T11:08:48.518Z"
+			"timeStamp": "2020-02-05T11:10:08.279Z"
 		},
 		"RegexLab_buttonValid": {
-			"timeStamp": "2020-02-03T11:08:48.510Z"
+			"timeStamp": "2020-02-05T11:10:08.280Z"
 		},
 		"RegexLab_Update_TabCtrl": {
-			"timeStamp": "2020-02-03T11:08:48.522Z"
+			"timeStamp": "2020-02-05T11:10:08.280Z"
 		},
 		"dragElement": {
-			"timeStamp": "2020-02-03T11:08:48.517Z"
+			"timeStamp": "2020-02-05T11:10:08.281Z"
 		},
 		"convert_escape_character": {
-			"timeStamp": "2020-02-03T11:08:48.518Z"
+			"timeStamp": "2020-02-05T11:10:08.281Z"
 		},
 		"RegexLab_update_current": {
-			"timeStamp": "2020-02-03T11:08:48.523Z"
+			"timeStamp": "2020-02-05T11:10:08.281Z"
 		},
 		"findFunction": {
-			"timeStamp": "2020-02-03T11:08:48.519Z"
+			"timeStamp": "2020-02-05T11:10:08.282Z"
 		},
 		"RegexLab_RegulexDisplay": {
-			"timeStamp": "2020-02-03T11:08:48.512Z"
+			"timeStamp": "2020-02-05T11:10:08.280Z"
 		},
 		"(RegexLab_PathExternalDB)": {
-			"timeStamp": "2020-02-03T11:08:48.515Z",
+			"timeStamp": "2020-02-05T11:10:08.284Z",
 			"attributes": {
 				"invisible": true
 			}
