@@ -89,10 +89,8 @@ Case of
 		
 		If (Frontmost window#Current form window)
 			OBJECT SET ENABLED(*;"obj_PPPattern";False)
-			OBJECT SET ENABLED(*;"obj_PPReplacement";False)
 		Else 
 			OBJECT SET ENABLED(*;"obj_PPPattern";True)
-			OBJECT SET ENABLED(*;"obj_PPReplacement";True)
 			
 		End if 
 		

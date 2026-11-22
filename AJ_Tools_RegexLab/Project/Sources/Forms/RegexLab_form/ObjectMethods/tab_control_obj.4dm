@@ -19,8 +19,7 @@ Case of
 	: (Form event code=On Clicked)
 		
 		
-		$itemPos_l:=Selected list items(Form.tab)
-		GET LIST ITEM(Form.tab;$itemPos_l;$itemRef_l;$function_t;$itemSubList_l;$itemSubExpanded_b)
+		$function_t:=Form.tab.values[Form.tab.index]  // selected tab
 		
 		If (Windows Alt down)  //Copy or Duplicate the current example
 			Case of 
