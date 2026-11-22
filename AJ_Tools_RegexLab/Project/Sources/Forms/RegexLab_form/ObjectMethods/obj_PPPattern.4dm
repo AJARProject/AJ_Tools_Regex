@@ -12,8 +12,12 @@
 
 
 
-// Copies the 4D code for the current example to the clipboard (see dragElement).
-// The picture button returns to its first frame on its own (switchBackWhenReleased).
+// Copies the 4D code for the current example to the clipboard (see dragElement),
+// then shows the "clipboard full" thumbnail of presse-papiers.png
+// (thumbnails numbered from 0: 0 empty, 1 clicked, 2 full, 3 disabled).
 // Removed: pointer to obj_PPReplacement (object no longer in the form, Null pointer error 85)
 // and OBJECT SET FORMAT "?2075" (picture library reference from the binary base).
 dragElement(Form event code; Form.testSelected.pattern; Form.testSelected.replacement; "Pattern")
+If (Get text from pasteboard#"")
+	OBJECT SET VALUE("obj_PPPattern"; 2)
+End if 
