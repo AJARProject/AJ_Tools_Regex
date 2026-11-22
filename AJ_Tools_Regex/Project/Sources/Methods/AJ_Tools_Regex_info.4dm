@@ -4,4 +4,4 @@
 // Retourne le nom du composant, la version de 4D visée et son numéro de version.
 #DECLARE() : Text
 
-return "AJ_Tools_Regex (v21 R4) : 5.2.0"
+return "AJ_Tools_Regex (v21 R4) : 6.0.0"

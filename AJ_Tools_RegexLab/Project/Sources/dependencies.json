@@ -2,7 +2,7 @@
 	"dependencies": {
 		"AJ_Tools_Regex": {
 			"github": "AJARProject/AJ_Tools_Regex",
-			"version": "^5.2.0"
+			"version": "^6.0.0"
 		}
 	}
 }
