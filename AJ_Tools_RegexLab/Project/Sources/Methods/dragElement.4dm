@@ -37,28 +37,32 @@ Case of
 		$method_t:=""
 End case 
 
-If ($method_t#"")
-	$code_t:="var $regex : Object:=New regex\r"
-	$code_t:=$code_t+"var $params : Object:={pattern: "+convert_escape_character(String(Form.testSelected.pattern))
-	$code_t:=$code_t+"; string: "+convert_escape_character(String(Form.testSelected.target))
-	
-	If ($method_t="substitute")
-		$code_t:=$code_t+"; string_for_replacement: "+convert_escape_character(String(Form.testSelected.replacement))
-	End if 
-	
-	If ($method_t="extract")
-		$groups_c:=New collection
-		For each ($group_t; Split string(String(Form.testSelected.groupList); ","; sk ignore empty strings+sk trim spaces))
-			$groups_c.push(String(Num($group_t)))
-		End for each 
-		If ($groups_c.length>0)
-			$code_t:=$code_t+"; group: ["+$groups_c.join("; ")+"]"
-		End if 
-	End if 
-	
-	$code_t:=$code_t+"}\r"
-	$code_t:=$code_t+"var $result : Object:=$regex."+$method_t+"($params)\r"
-	SET TEXT TO PASTEBOARD($code_t)
+If (Shift down)  // Shift+click: copy only the expression, as a 4D string literal (tooltip Clipboardtip)
+	SET TEXT TO PASTEBOARD(convert_escape_character(String(Form.testSelected.pattern)))
 Else 
-	BEEP
+	If ($method_t#"")
+		$code_t:="var $regex : Object:=New regex\r"
+		$code_t:=$code_t+"var $params : Object:={pattern: "+convert_escape_character(String(Form.testSelected.pattern))
+		$code_t:=$code_t+"; string: "+convert_escape_character(String(Form.testSelected.target))
+	
+		If ($method_t="substitute")
+			$code_t:=$code_t+"; string_for_replacement: "+convert_escape_character(String(Form.testSelected.replacement))
+		End if 
+	
+		If ($method_t="extract")
+			$groups_c:=New collection
+			For each ($group_t; Split string(String(Form.testSelected.groupList); ","; sk ignore empty strings+sk trim spaces))
+				$groups_c.push(String(Num($group_t)))
+			End for each 
+			If ($groups_c.length>0)
+				$code_t:=$code_t+"; group: ["+$groups_c.join("; ")+"]"
+			End if 
+		End if 
+	
+		$code_t:=$code_t+"}\r"
+		$code_t:=$code_t+"var $result : Object:=$regex."+$method_t+"($params)\r"
+		SET TEXT TO PASTEBOARD($code_t)
+	Else 
+		BEEP
+	End if 
 End if 
