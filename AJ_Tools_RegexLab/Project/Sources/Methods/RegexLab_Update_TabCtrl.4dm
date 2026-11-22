@@ -1,6 +1,7 @@
 //%attributes = {}
-var $itemRef_l : Integer
-ARRAY LONGINT($_Pos_l;0)
-
-$itemRef_l:=Find in list(Form.tab;Form.current_function;0;$_Pos_l)  // get the ref
-SELECT LIST ITEMS BY REFERENCE(Form.tab;$itemRef_l)
+// Select the tab of Form.current_function (Form.tab is an object {values; index})
+var $index_l : Integer
+$index_l:=Form.tab.values.indexOf(Form.current_function)
+If ($index_l>=0)
+	Form.tab.index:=$index_l
+End if 

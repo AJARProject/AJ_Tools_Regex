@@ -34,8 +34,7 @@
 					"sizingX": "grow",
 					"sizingY": "grow",
 					"dataSource": "Form.tab",
-					"dataSourceTypeHint": "arrayText",
-					"action": "GotoPage",
+					"dataSourceTypeHint": "object",
 					"method": "ObjectMethods/tab_control_obj.4dm",
 					"events": [
 						"onClick"

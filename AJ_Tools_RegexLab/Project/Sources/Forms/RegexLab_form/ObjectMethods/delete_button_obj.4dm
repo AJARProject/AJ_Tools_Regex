@@ -10,8 +10,7 @@ Case of
 	: (Form event code=On Clicked)
 		  // which function (tabcontrol) is selected
 		If (Form.examples.length#0)
-			$itemPos_l:=Selected list items(Form.tab)
-			GET LIST ITEM(Form.tab;$itemPos_l;$itemRef_l;$functionName_t;$itemSubList_l;$itemSubExpanded_b)
+			$functionName_t:=Form.tab.values[Form.tab.index]  // selected tab
 			LISTBOX GET CELL POSITION(*;"listbox_name_obj";$column_l;$row_l)
 			  //Form.actual_row:=$row_l
 			

@@ -14,16 +14,10 @@
 #DECLARE() -> $result : Object
 
 var $init_obj; $temp_obj : Object
-var $tab : Integer
 $init_obj:=New object
 
-$tab:=New list
-APPEND TO LIST($tab;"Match";1)
-APPEND TO LIST($tab;"Matches";2)
-APPEND TO LIST($tab;"Substitute";3)
-APPEND TO LIST($tab;"Split";4)
-APPEND TO LIST($tab;"Extract";5)
-$init_obj.tab:=$tab
+// Tab control data source: object {values; index} (documented form, 4D v21 Tab Controls)
+$init_obj.tab:=New object("values"; New collection("Match"; "Matches"; "Substitute"; "Split"; "Extract"); "index"; 0)
 
 
 $init_obj.full_examples:=New collection

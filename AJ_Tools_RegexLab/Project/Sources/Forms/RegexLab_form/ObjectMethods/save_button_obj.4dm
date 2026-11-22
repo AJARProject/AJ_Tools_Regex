@@ -12,8 +12,7 @@ Case of
 		
 		If (Form.examples.length#0)
 			  //$current:=Form.current
-			$itemPos_l:=Selected list items(Form.tab)
-			GET LIST ITEM(Form.tab;$itemPos_l;$itemRef_l;$itemText_t;$itemSubList_l;$itemSubExpanded_b)
+			$itemText_t:=Form.tab.values[Form.tab.index]  // selected tab
 			Form.testSelected.function:=$itemText_t
 			
 			  // check if the rule is new
