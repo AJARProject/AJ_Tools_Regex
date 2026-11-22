@@ -3,6 +3,32 @@
 Réalisé avec Cursor / Grok Bot (Codesky) pour Maurice Inzirillo.
 Made with Cursor / Grok Bot (Codesky) for Maurice Inzirillo.
 
+## 6.0.0 — 4D 21 R4
+
+### Français
+
+**Classes**
+- Nouvelle classe `Regex`, exposée dans le class store des projets hôtes sous le namespace `AJRegex` : `cs.AJRegex.Regex.new()`. Ses fonctions `match`, `matches`, `substitute`, `split` et `extract` reçoivent les mêmes requêtes et retournent les mêmes résultats que `New regex` (elles appellent les mêmes méthodes).
+- Constructeur avec pattern par défaut optionnel : `cs.AJRegex.Regex.new("\\d+").matches({string: $text})`. Il s'applique seulement quand la requête n'a pas d'attribut `pattern` ; la requête n'est jamais modifiée.
+- Settings > Général : *Component namespace in the class store* = `AJRegex` et *Generate syntax file for code completion when compiled* coché (complétion de code dans l'hôte).
+
+**Compatibilité**
+- `New regex` est inchangée : les 65 cas de `tests/` donnent le même résultat qu'en 5.2.0 (`tests/results/6.0.0.json`).
+- Les hôtes qui déclarent `"version": "^5.2.0"` restent en 5.x ; indiquez `^6.0.0` pour utiliser les classes.
+- `AJ_Tools_Regex_info` retourne `AJ_Tools_Regex (v21 R4) : 6.0.0`.
+
+### English
+
+**Classes**
+- New `Regex` class, exposed in the host projects' class store under the `AJRegex` namespace: `cs.AJRegex.Regex.new()`. Its `match`, `matches`, `substitute`, `split` and `extract` functions take the same requests and return the same results as `New regex` (they call the same methods).
+- Constructor with an optional default pattern: `cs.AJRegex.Regex.new("\\d+").matches({string: $text})`. It only applies when the request has no `pattern` attribute; the request is never modified.
+- Settings > General: *Component namespace in the class store* = `AJRegex` and *Generate syntax file for code completion when compiled* checked (code completion in the host).
+
+**Compatibility**
+- `New regex` is unchanged: the 65 cases of `tests/` give the same result as in 5.2.0 (`tests/results/6.0.0.json`).
+- Hosts that declare `"version": "^5.2.0"` stay on 5.x; use `^6.0.0` to get the classes.
+- `AJ_Tools_Regex_info` returns `AJ_Tools_Regex (v21 R4) : 6.0.0`.
+
 ## 5.2.0 — 4D 21 R4
 
 ### Français

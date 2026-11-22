@@ -3,7 +3,7 @@
 Réalisé avec Cursor / Grok Bot (Codesky) pour Maurice Inzirillo.
 Made with Cursor / Grok Bot (Codesky) for Maurice Inzirillo.
 
-Version 5.2.0 — 4D 21 R4 · [Français](#français) · [English](#english)
+Version 6.0.0 — 4D 21 R4 · [Français](#français) · [English](#english)
 
 ![AJ_Tools_RegexLab](aj_tools_regex_preview.png)
 
@@ -19,7 +19,7 @@ Le dépôt contient :
 - `AJ_Tools_RegexLab/` : l'application de test (Regex Lab) ;
 - `tests/` : le banc de test du comportement ([tests/README.md](tests/README.md)).
 
-Les changements de la version 5.2.0 sont décrits dans [CHANGELOG.md](CHANGELOG.md).
+Les changements de chaque version (6.0.0 : classe `Regex` exposée sous `cs.AJRegex`) sont décrits dans [CHANGELOG.md](CHANGELOG.md).
 
 ### Installation
 
@@ -30,7 +30,7 @@ Les changements de la version 5.2.0 sont décrits dans [CHANGELOG.md](CHANGELOG.
 	"dependencies": {
 		"AJ_Tools_Regex": {
 			"github": "AJARProject/AJ_Tools_Regex",
-			"version": "^5.2.0"
+			"version": "^6.0.0"
 		}
 	}
 }
@@ -40,7 +40,7 @@ Les changements de la version 5.2.0 sont décrits dans [CHANGELOG.md](CHANGELOG.
 
 **En local.** Déclarez `"AJ_Tools_Regex": {}` dans `dependencies.json` et placez le dossier `AJ_Tools_Regex` (ou le composant construit `AJ_Tools_Regex.4dbase`) à côté du dossier de votre projet, ou indiquez son chemin dans un fichier `environment4d.json`. Vous pouvez aussi copier `AJ_Tools_Regex.4dbase` dans le dossier `Components` du projet (voir [Composants](https://developer.4d.com/docs/Project/components)).
 
-Pour vérifier la version chargée : `AJ_Tools_Regex_info` retourne `AJ_Tools_Regex (v21 R4) : 5.2.0`.
+Pour vérifier la version chargée : `AJ_Tools_Regex_info` retourne `AJ_Tools_Regex (v21 R4) : 6.0.0`.
 
 ### Utilisation
 
@@ -54,6 +54,28 @@ $result:=$regex.match(New object("pattern"; "b+"; "string"; "abbbc"))
 ```
 
 Toutes les fonctions sont « preemptive capable » (utilisables dans un process préemptif) et ne modifient pas l'objet requête. Chaque résultat contient `success` et `listbox`, une collection d'objets `{position; length; group; string_extracted}` utilisable directement comme source d'une list box collection. Les positions commencent à 1. Un groupe qui ne participe pas à une occurrence a `position` -1, `length` 0 et `string_extracted` "".
+
+#### Classe `Regex` (`cs.AJRegex.Regex`)
+
+Depuis la version 6.0.0, le composant expose aussi la classe `Regex` dans le class store de l'hôte, sous le namespace `AJRegex` (Settings > Général > *Component namespace in the class store*). Ses fonctions `match`, `matches`, `substitute`, `split` et `extract` reçoivent les mêmes objets requête et retournent les mêmes résultats que celles de `New regex` :
+
+```4d
+var $regex:=cs.AJRegex.Regex.new()
+var $result:=$regex.match({pattern: "\\d+"; string: "ab12"})
+// $result.success = True, $result.string_extracted = "12", $result.position = 3, $result.length = 2
+```
+
+Le constructeur accepte un pattern par défaut, utilisé quand la requête n'a pas d'attribut `pattern` (un `pattern` présent dans la requête reste prioritaire ; la requête n'est pas modifiée) :
+
+```4d
+var $digits:=cs.AJRegex.Regex.new("\\d+")
+$result:=$digits.matches({string: "a1 b22"})
+// $result.string_extracted = ["1";"22"], $result.position = [2;5]
+```
+
+Le composant compilé fournit un fichier de syntaxe (`Resources/en.lproj/syntaxEN.json`) pour la complétion de code dans l'hôte.
+
+`New regex` reste disponible et inchangée : le code existant n'a pas besoin d'être modifié.
 
 #### `match` — première occurrence
 
@@ -155,7 +177,7 @@ The repository contains:
 - `AJ_Tools_RegexLab/`: the test application (Regex Lab);
 - `tests/`: the behaviour harness ([tests/README.md](tests/README.md)).
 
-Version 5.2.0 changes are listed in [CHANGELOG.md](CHANGELOG.md).
+The changes of each version (6.0.0: `Regex` class exposed as `cs.AJRegex`) are listed in [CHANGELOG.md](CHANGELOG.md).
 
 ### Installation
 
@@ -166,7 +188,7 @@ Version 5.2.0 changes are listed in [CHANGELOG.md](CHANGELOG.md).
 	"dependencies": {
 		"AJ_Tools_Regex": {
 			"github": "AJARProject/AJ_Tools_Regex",
-			"version": "^5.2.0"
+			"version": "^6.0.0"
 		}
 	}
 }
@@ -176,7 +198,7 @@ Version 5.2.0 changes are listed in [CHANGELOG.md](CHANGELOG.md).
 
 **Locally.** Declare `"AJ_Tools_Regex": {}` in `dependencies.json` and put the `AJ_Tools_Regex` folder (or the built `AJ_Tools_Regex.4dbase`) next to your project folder, or give its path in an `environment4d.json` file. You can also copy `AJ_Tools_Regex.4dbase` into the project's `Components` folder (see [Components](https://developer.4d.com/docs/Project/components)).
 
-To check the loaded version: `AJ_Tools_Regex_info` returns `AJ_Tools_Regex (v21 R4) : 5.2.0`.
+To check the loaded version: `AJ_Tools_Regex_info` returns `AJ_Tools_Regex (v21 R4) : 6.0.0`.
 
 ### Usage
 
@@ -190,6 +212,28 @@ $result:=$regex.match(New object("pattern"; "b+"; "string"; "abbbc"))
 ```
 
 All functions are preemptive capable (usable in a preemptive process) and leave the request object unchanged. Every result contains `success` and `listbox`, a collection of `{position; length; group; string_extracted}` objects that can be used directly as the source of a collection list box. Positions start at 1. A group that does not take part in an occurrence has `position` -1, `length` 0 and `string_extracted` "".
+
+#### `Regex` class (`cs.AJRegex.Regex`)
+
+Since version 6.0.0, the component also exposes the `Regex` class in the host class store, under the `AJRegex` namespace (Settings > General > *Component namespace in the class store*). Its `match`, `matches`, `substitute`, `split` and `extract` functions take the same request objects and return the same results as the `New regex` ones:
+
+```4d
+var $regex:=cs.AJRegex.Regex.new()
+var $result:=$regex.match({pattern: "\\d+"; string: "ab12"})
+// $result.success = True, $result.string_extracted = "12", $result.position = 3, $result.length = 2
+```
+
+The constructor accepts a default pattern, used when the request has no `pattern` attribute (a `pattern` given in the request wins; the request is not modified):
+
+```4d
+var $digits:=cs.AJRegex.Regex.new("\\d+")
+$result:=$digits.matches({string: "a1 b22"})
+// $result.string_extracted = ["1";"22"], $result.position = [2;5]
+```
+
+The compiled component ships a syntax file (`Resources/en.lproj/syntaxEN.json`) for code completion in the host.
+
+`New regex` is still available and unchanged: existing code does not need any change.
 
 #### `match` — first occurrence
 
