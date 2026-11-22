@@ -9,7 +9,9 @@
   // 
   // index : (Longint) return Index of first value found, or -1 if not found
 
-If (False:C215)
+#DECLARE($param1 : Object; $param2 : Text; $param3 : Text)
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Maurice Inzirillo
 	  // Date and time: 25.10.18, 16:46:57
@@ -22,6 +24,4 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
-C_OBJECT:C1216($1)
-C_TEXT:C284($2;$3)
-$1.result:=$1.value[$2]=$3
+$param1.result:=$param1.value[$param2]=$param3

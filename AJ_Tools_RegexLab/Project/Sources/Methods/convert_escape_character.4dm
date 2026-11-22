@@ -16,17 +16,18 @@
   // Modified by: Maurice Inzirillo (12.11.18)
   // added \r, and \n
   // ----------------------------------------------------
-C_TEXT:C284($0)
-C_TEXT:C284($1;$string_t)
 
 
 
-$string_t:=$1
-$string_t:=Replace string:C233($string_t;"\\";"\\\\")
-$string_t:=Replace string:C233($string_t;Char:C90(34);Char:C90(92)+Char:C90(34))
-$string_t:=Replace string:C233($string_t;"\r";"\\\\r")
-$string_t:=Replace string:C233($string_t;"\n";"\\\\n")
-$0:="\""+$string_t+"\""
+#DECLARE($param1 : Text) -> $result : Text
+
+var $string_t : Text
+$string_t:=$param1
+$string_t:=Replace string($string_t;"\\";"\\\\")
+$string_t:=Replace string($string_t;Char(34);Char(92)+Char(34))
+$string_t:=Replace string($string_t;"\r";"\\\\r")
+$string_t:=Replace string($string_t;"\n";"\\\\n")
+$result:="\""+$string_t+"\""
 
 
   // $test:=JSON Stringify($1) ! missing : \n -> \\n , \r -> \\r

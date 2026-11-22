@@ -1,1 +1,1 @@
-OPEN URL:C673("http://forums.4d.fr/Forum/EN/1434147/0/0/")
+OPEN URL("https://discuss.4d.com/")  // 4D Forum (the forums.4d.fr address no longer answers)

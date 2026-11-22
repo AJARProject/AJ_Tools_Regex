@@ -1,11 +1,12 @@
 
 
-$evt:=Form event code:C388
+var $evt : Integer
+$evt:=Form event code
 Case of 
-	: ($evt=On Load:K2:1)
+	: ($evt=On Load)
 		
-	: ($evt=On Clicked:K2:4)
-		CALL SUBFORM CONTAINER:C1086(-10200)
+	: ($evt=On Clicked)
+		CALL SUBFORM CONTAINER(-10200)
 		
 End case 
 

@@ -1,1 +1,1 @@
-OPEN URL:C673("http://www.icu-project.org/userguide/regexp.html")
+OPEN URL("https://unicode-org.github.io/icu/userguide/strings/regexp.html")  // ICU regular expressions user guide (new address)

@@ -52,7 +52,7 @@
 					"height": 81,
 					"sizingX": "grow",
 					"sizingY": "grow",
-					"dataSource": "Form:C1466.replacement",
+					"dataSource": "Form.replacement",
 					"class": "default",
 					"tooltip": {
 						"$ref": "/SOURCES/tips.json#/Replacement"
@@ -74,7 +74,7 @@
 					"height": 97,
 					"sizingX": "grow",
 					"sizingY": "grow",
-					"dataSource": "Form:C1466.result.string_resulting",
+					"dataSource": "Form.result.string_resulting",
 					"class": "default",
 					"tooltip": {
 						"$ref": "/SOURCES/tips.json#/Result"
@@ -100,7 +100,7 @@
 					"resizingMode": "legacy",
 					"listboxType": "collection",
 					"movableRows": false,
-					"dataSource": "Form:C1466.result.listbox",
+					"dataSource": "Form.result.listbox",
 					"selectionMode": "single",
 					"scrollbarHorizontal": "automatic",
 					"events": [
@@ -112,7 +112,7 @@
 					"columns": [
 						{
 							"name": "Column1",
-							"dataSource": "This:C1470.group",
+							"dataSource": "This.group",
 							"dataSourceTypeHint": "number",
 							"width": 50,
 							"minWidth": 30,
@@ -134,7 +134,7 @@
 						},
 						{
 							"name": "Column3",
-							"dataSource": "This:C1470.position",
+							"dataSource": "This.position",
 							"dataSourceTypeHint": "number",
 							"width": 50,
 							"minWidth": 30,
@@ -155,7 +155,7 @@
 						},
 						{
 							"name": "Column4",
-							"dataSource": "This:C1470.length",
+							"dataSource": "This.length",
 							"dataSourceTypeHint": "number",
 							"width": 50,
 							"minWidth": 30,
@@ -176,7 +176,7 @@
 						},
 						{
 							"name": "Column5",
-							"dataSource": "This:C1470.string_extracted",
+							"dataSource": "This.string_extracted",
 							"width": 400,
 							"minWidth": 10,
 							"maxWidth": 32000,

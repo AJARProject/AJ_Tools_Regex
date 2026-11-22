@@ -10,9 +10,8 @@
   // Paramètres
   // ----------------------------------------------------
   // 
-C_TEXT:C284($regexVisualizer_t)
-$regexVisualizer_t:=Storage:C1525.path.visualizer
-WA SET PREFERENCE:C1041(*;"obj_WA_regexVis";WA enable Web inspector:K62:7;True:C214)
-WA SET PREFERENCE:C1041(*;"obj_WA_regexVis";WA enable JavaScript:K62:4;True:C214)
-WA SET PREFERENCE:C1041(*;"obj_WA_regexVis";WA enable contextual menu:K62:6;True:C214)
-WA OPEN URL:C1020(*;"regex_visual_webarea_obj";$regexVisualizer_t)
+var $regexVisualizer_t : Text
+$regexVisualizer_t:=Storage.path.visualizer
+WA SET PREFERENCE(*;"regex_visual_webarea_obj";WA enable Web inspector;True)
+WA SET PREFERENCE(*;"regex_visual_webarea_obj";WA enable contextual menu;True)
+WA OPEN URL(*;"regex_visual_webarea_obj";$regexVisualizer_t)

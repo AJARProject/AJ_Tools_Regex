@@ -8,31 +8,32 @@
   //
   // Parameters
   // ----------------------------------------------------
-C_LONGINT:C283($itemPos_l;$itemRef_l;$index_l;$itemSubList_l)
-C_BOOLEAN:C305($itemSubExpanded_b)
-C_TEXT:C284($function_t)
 
+var $itemPos_l; $itemRef_l; $index_l; $itemSubList_l : Integer
+var $itemSubExpanded_b : Boolean
+var $function_t; $testName_t : Text
+var $current : Collection
 Case of 
-	: (Form event code:C388=On Load:K2:1)
+	: (Form event code=On Load)
 		
-	: (Form event code:C388=On Clicked:K2:4)
+	: (Form event code=On Clicked)
 		
 		
-		$itemPos_l:=Selected list items:C379(Form:C1466.tab)
-		GET LIST ITEM:C378(Form:C1466.tab;$itemPos_l;$itemRef_l;$function_t;$itemSubList_l;$itemSubExpanded_b)
+		$itemPos_l:=Selected list items(Form.tab)
+		GET LIST ITEM(Form.tab;$itemPos_l;$itemRef_l;$function_t;$itemSubList_l;$itemSubExpanded_b)
 		
-		If (Windows Alt down:C563)  //Copy or Duplicate the current example
+		If (Windows Alt down)  //Copy or Duplicate the current example
 			Case of 
 				: ($function_t="Match")  //Matching
-					RegexLab_Load_Examples ("Match";"";True:C214)
+					RegexLab_Load_Examples ("Match";"";True)
 				: ($function_t="Matches")  //Matching
-					RegexLab_Load_Examples ("Matches";"";True:C214)
+					RegexLab_Load_Examples ("Matches";"";True)
 				: ($function_t="Substitute")  //Substitution
-					RegexLab_Load_Examples ("Substitute";"";True:C214)
+					RegexLab_Load_Examples ("Substitute";"";True)
 				: ($function_t="Split")  //Splitting
-					RegexLab_Load_Examples ("Split";"";True:C214)
+					RegexLab_Load_Examples ("Split";"";True)
 				: ($function_t="Extract")  //Extracting
-					RegexLab_Load_Examples ("Extract";"";True:C214)
+					RegexLab_Load_Examples ("Extract";"";True)
 					
 			End case 
 			
@@ -53,29 +54,27 @@ Case of
 			End case 
 		End if 
 		
-		Form:C1466.current_function:=$function_t
-		If (Form:C1466.examples.length#0)
+		Form.current_function:=$function_t
+		If (Form.examples.length#0)
 			  // Function switch
-			C_COLLECTION:C1488($current)
-			C_TEXT:C284($testName_t)
-			$current:=Form:C1466.current.query("function = :1";$function_t)
+			$current:=Form.current.query("function = :1";$function_t)
 			
 			
-			If ($current[0].name=Null:C1517)
+			If ($current[0].name=Null)
 				$index_l:=-1
 			Else 
 				$testName_t:=$current[0].name
-				$index_l:=Form:C1466.examples.findIndex("findParam";"name";$testName_t)
+				$index_l:=Form.examples.findIndex("findParam";"name";$testName_t)
 			End if 
 			
 			If ($index_l>=0)
-				LISTBOX SELECT ROW:C912(*;"listbox_name_obj";$index_l+1)
-				OBJECT SET SCROLL POSITION:C906(*;"listbox_name_obj";$index_l+1)
-				Form:C1466.testSelected:=Form:C1466.examples[$index_l]
+				LISTBOX SELECT ROW(*;"listbox_name_obj";$index_l+1)
+				OBJECT SET SCROLL POSITION(*;"listbox_name_obj";$index_l+1)
+				Form.testSelected:=Form.examples[$index_l]
 			Else 
-				LISTBOX SELECT ROW:C912(*;"listbox_name_obj";1)  // first by default
-				OBJECT SET SCROLL POSITION:C906(*;"listbox_name_obj";1)
-				Form:C1466.testSelected:=Form:C1466.examples[0]
+				LISTBOX SELECT ROW(*;"listbox_name_obj";1)  // first by default
+				OBJECT SET SCROLL POSITION(*;"listbox_name_obj";1)
+				Form.testSelected:=Form.examples[0]
 			End if 
 			
 			
@@ -86,7 +85,7 @@ Case of
 		Else 
 			RegexLab_RegulexDisplay 
 		End if 
-	: (Form event code:C388=On Validate:K2:3) | (Form event code:C388=On Close Detail:K2:24)
+	: (Form event code=On Validate) | (Form event code=On Close Detail)
 		
 		
 End case 

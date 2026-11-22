@@ -9,18 +9,19 @@
   // Parameters
   // ----------------------------------------------------
 
+var $separator_t; $string : Text
 Case of 
 		
 		
-	: (Form event code:C388=On After Keystroke:K2:26)
+	: (Form event code=On After Keystroke)
 		
 		
 		
-		Form:C1466.group:=New collection:C1472
+		Form.group:=New collection
 		
 		$separator_t:=","
-		$string:=Form:C1466.groupList
-		Form:C1466.group:=Split string:C1554($string;$separator_t;sk ignore empty strings:K86:1)
+		$string:=Form.groupList
+		Form.group:=Split string($string;$separator_t;sk ignore empty strings)
 		
 End case 
 

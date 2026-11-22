@@ -33,7 +33,7 @@
 					"height": 1129,
 					"sizingX": "grow",
 					"sizingY": "grow",
-					"dataSource": "Form:C1466.tab",
+					"dataSource": "Form.tab",
 					"dataSourceTypeHint": "arrayText",
 					"action": "GotoPage",
 					"method": "ObjectMethods/tab_control_obj.4dm",
@@ -66,7 +66,7 @@
 					"width": 519,
 					"height": 17,
 					"sizingX": "grow",
-					"dataSource": "Form:C1466.testSelected.name",
+					"dataSource": "Form.testSelected.name",
 					"placeholder": "Test name",
 					"method": "ObjectMethods/regexName.4dm",
 					"events": [
@@ -83,7 +83,7 @@
 					"height": 33,
 					"sizingX": "grow",
 					"sizingY": "grow",
-					"dataSource": "Form:C1466.testSelected.pattern",
+					"dataSource": "Form.testSelected.pattern",
 					"placeholder": "Put your pattern here...",
 					"method": "ObjectMethods/pattern.4dm",
 					"events": [
@@ -100,7 +100,7 @@
 					"height": 337,
 					"sizingX": "grow",
 					"sizingY": "grow",
-					"dataSource": "Form:C1466.testSelected.target",
+					"dataSource": "Form.testSelected.target",
 					"placeholder": "Put the target text here...",
 					"scrollbarVertical": "automatic",
 					"method": "ObjectMethods/target.4dm",
@@ -118,7 +118,7 @@
 					"height": 65,
 					"sizingX": "grow",
 					"sizingY": "grow",
-					"dataSource": "Form:C1466.testSelected.description",
+					"dataSource": "Form.testSelected.description",
 					"placeholder": "Description",
 					"scrollbarVertical": "automatic",
 					"method": "ObjectMethods/description.4dm",
@@ -158,8 +158,8 @@
 					"hideFocusRing": true,
 					"movableRows": false,
 					"memorizeValue": true,
-					"dataSource": "Form:C1466.examples",
-					"currentItemSource": "Form:C1466.testSelected",
+					"dataSource": "Form.examples",
+					"currentItemSource": "Form.testSelected",
 					"selectionMode": "single",
 					"scrollbarHorizontal": "automatic",
 					"borderStyle": "none",
@@ -170,7 +170,7 @@
 					"columns": [
 						{
 							"name": "name_col",
-							"dataSource": "This:C1470.name",
+							"dataSource": "This.name",
 							"width": 177,
 							"minWidth": 10,
 							"maxWidth": 32000,
@@ -183,7 +183,7 @@
 							"header": {
 								"name": "name_header",
 								"text": "Examples",
-								"dataSource": "Form:C1466.example"
+								"dataSource": "Form.example"
 							},
 							"footer": {
 								"name": "Footer2",
@@ -333,7 +333,7 @@
 					"width": 572,
 					"height": 507,
 					"sizingY": "grow",
-					"dataSource": "Form:C1466.testSelected",
+					"dataSource": "Form.testSelected",
 					"enterableInList": false,
 					"deletableInList": false,
 					"doubleClickInRowAction": "editSubrecord",
