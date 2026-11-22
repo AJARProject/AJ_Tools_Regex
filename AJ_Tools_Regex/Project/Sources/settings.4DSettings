@@ -4,7 +4,7 @@
 			<options/>
 		</deployment>
 		<compiler>
-			<options error_file="true" fat_binary="true" symbol_file="true"/>
+			<options error_file="true" fat_binary="true" symbol_file="true" target="all"/>
 		</compiler>
 		<server>
 			<network>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  4D 21 R4 component build settings.
+  Location: Settings/buildApp.4DSettings (next to the Project folder).
+  Build: BUILD APPLICATION(<project folder>/Settings/buildApp.4DSettings).
+  Compilation targets (Intel + Apple Silicon) come from target="all" in
+  Project/Sources/settings.4DSettings; the built component is signed ad hoc by 4D.
+  https://developer.4d.com/docs/21-R4/Desktop/building
+  https://developer.4d.com/docs/21-R4/commands/build-application
+  Keys /Preferences4D/BuildApp/BuildComponent and BuildApplicationName.
+  No licence path.
+-->
+<Preferences4D>
+	<BuildApp>
+		<BuildCompiled>False</BuildCompiled>
+		<IncludeAssociatedFolders>True</IncludeAssociatedFolders>
+		<BuildComponent>True</BuildComponent>
+		<BuildApplicationName>AJ_Tools_Regex</BuildApplicationName>
+	</BuildApp>
+</Preferences4D>
