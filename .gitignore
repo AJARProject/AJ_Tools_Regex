@@ -26,6 +26,9 @@ Folder_Reports
 !/AJ_Tools_Regex/Settings/buildApp.4DSettings
 /AJ_Tools_RegexLab/Settings/
 
+# AJ_Tools_Regex_Build result file
+build_result.txt
+
 # Component built by BUILD APPLICATION (published as a GitHub release asset, not committed)
 /AJ_Tools_Regex/Components/
 /AJ_Tools_Regex/Builds/

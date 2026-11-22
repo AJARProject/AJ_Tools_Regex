@@ -10,6 +10,7 @@ Made with Cursor / Grok Bot (Codesky) for Maurice Inzirillo.
 **Migration**
 - Projet en 4D 21 R4 (`compatibilityVersion` 2140, `tokenizedText` false), `#DECLARE` et `var` partout ; méthodes toujours « preemptive capable ».
 - Nouvelle méthode partagée `AJ_Tools_Regex_info` : retourne `AJ_Tools_Regex (v21 R4) : 5.2.0`.
+- Nouvelle méthode `AJ_Tools_Regex_Build` (invisible, non partagée) : compile et construit le composant.
 - Composant construit avec `BUILD APPLICATION` (`AJ_Tools_Regex/Settings/buildApp.4DSettings`), code compilé Intel + Apple Silicon, signé ad hoc. Installation par le gestionnaire de dépendances (`dependencies.json`).
 - Copies compilées v18 (Intel seulement) retirées du dépôt.
 
@@ -30,6 +31,7 @@ Tests : `tests/` (65 cas, résultats 5.1.0 et 5.2.0, comparaison).
 **Migration**
 - Project on 4D 21 R4 (`compatibilityVersion` 2140, `tokenizedText` false), `#DECLARE` and `var` everywhere; methods still preemptive capable.
 - New shared method `AJ_Tools_Regex_info`: returns `AJ_Tools_Regex (v21 R4) : 5.2.0`.
+- New method `AJ_Tools_Regex_Build` (invisible, not shared): compiles and builds the component.
 - Component built with `BUILD APPLICATION` (`AJ_Tools_Regex/Settings/buildApp.4DSettings`), Intel + Apple Silicon compiled code, ad hoc signed. Installed with the dependency manager (`dependencies.json`).
 - v18 compiled copies (Intel only) removed from the repository.
 
