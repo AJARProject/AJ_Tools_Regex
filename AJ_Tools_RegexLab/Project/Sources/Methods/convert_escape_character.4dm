@@ -25,8 +25,9 @@ var $string_t : Text
 $string_t:=$param1
 $string_t:=Replace string($string_t;"\\";"\\\\")
 $string_t:=Replace string($string_t;Char(34);Char(92)+Char(34))
-$string_t:=Replace string($string_t;"\r";"\\\\r")
-$string_t:=Replace string($string_t;"\n";"\\\\n")
+$string_t:=Replace string($string_t;"\r";"\\r")  // CR -> \r in the generated literal
+$string_t:=Replace string($string_t;"\n";"\\n")  // LF -> \n
+$string_t:=Replace string($string_t;"\t";"\\t")  // tab -> \t
 $result:="\""+$string_t+"\""
 
 

@@ -13,102 +13,52 @@
 
 #DECLARE($param1 : Integer; $param2 : Text; $param3 : Text; $param4 : Text)
 
-var $_tabctrl_ptr : Pointer
-var $itemPos_l; $itemRef_l; $itemSubList_l : Integer
-var $itemText_t; $myText2_t; $myText_t; $myTextReplacement_t : Text
-var $itemSubExpanded_b : Boolean
+// Puts on the clipboard the 4D code (v21 syntax) that runs the current example
+// with AJ_Tools_Regex. The same code is produced whatever the database language
+// (the French branches used to be empty, so the clipboard was emptied).
 
+var $function_t; $method_t; $code_t; $groups_t; $group_t : Text
+var $groups_c : Collection
 
-
-$itemText_t:=Form.tab.values[Form.tab.index]  // selected tab
-
+$function_t:=Form.tab.values[Form.tab.index]  // selected tab
 
 Case of 
-	: ($itemText_t="Match")  //Match
-		
-		If (Position("fr";Get database localization)>0)  //C'est du français
-			
-			
-		Else   //This is english
-			
-			$myText2_t:="C_OBJECT($regex)\n$regex:=New regex \nC_OBJECT($str;$result)\n"
-			$myText2_t:=$myText2_t+"$str:=New object\n$str.pattern:="+convert_escape_character (Form.testSelected.pattern)+"\n"
-			$myText2_t:=$myText2_t+"$str.string:="+convert_escape_character (Form.testSelected.target)+"\n$result:=$regex.match($str)"
-		End if 
-		
-	: ($itemText_t="Matches")  //Match
-		
-		If (Position("fr";Get database localization)>0)  //C'est du français
-			
-			
-		Else   //This is english
-			$myText2_t:="C_OBJECT($regex)\n$regex:=New regex \nC_OBJECT($str;$result)\n"
-			$myText2_t:=$myText2_t+"$str:=New object\n$str.pattern:="+convert_escape_character (Form.testSelected.pattern)+"\n"
-			$myText2_t:=$myText2_t+"$str.string:="+convert_escape_character (Form.testSelected.target)+"\n$result:=$regex.matches($str)"
-		End if 
-		
-		
-	: ($itemText_t="Substitute")  //Substitution
-		
-		
-		If (Position("fr";Get database localization)>0)  //C'est du français
-			
-		Else   //This is english code
-			$myText2_t:="C_OBJECT($regex)\n$regex:=New regex \nC_OBJECT($str;$result)\n"
-			$myText2_t:=$myText2_t+"$str:=New object\n$str.pattern:="+convert_escape_character (Form.testSelected.pattern)+"\n"
-			$myText2_t:=$myText2_t+"$str.string:="+convert_escape_character (Form.testSelected.target)+"\n"
-			$myText2_t:=$myText2_t+"$str.string_for_replacement:="+convert_escape_character (Form.testSelected.replacement)+"\n"
-			$myText2_t:=$myText2_t+"$result:=$regex.subsitute($str)"
-		End if 
-		
-		
-		
-	: ($itemText_t="Split")  //Splitting
-		
-		If (Position("fr";Get database localization)>0)  //C'est du français
-			
-		Else   //c'est en anglais
-			$myText2_t:="C_OBJECT($regex)\n$regex:=New regex \nC_OBJECT($str;$result)\n"
-			$myText2_t:=$myText2_t+"$str:=New object\n$str.pattern:="+convert_escape_character (Form.testSelected.pattern)+"\n"
-			$myText2_t:=$myText2_t+"$str.string:="+convert_escape_character (Form.testSelected.target)+"\n$result:=$regex.split($str)"
-		End if 
-		
-		
-	: ($itemText_t="Extract")  //Extracting
-		
-		If (Position("fr";Get database localization)>0)  //C'est du français
-			
-		Else   //c'est en anglais
-			$myText2_t:="C_OBJECT($regex)\n$regex:=New regex \nC_OBJECT($str;$result)\n"
-			$myText2_t:=$myText2_t+"$str:=New object\n$str.pattern:="+convert_escape_character (Form.testSelected.pattern)+"\n"
-			$myText2_t:=$myText2_t+"$str.string:="+convert_escape_character (Form.testSelected.target)+"\n"
-			$myText2_t:=$myText2_t+"$str.group:=New collection\n"
-			$myText2_t:=$myText2_t+"$str.group:=Split string("+convert_escape_character (Form.testSelected.groupList)+";"+"\",\""+";sk ignore empty strings)\n"
-			$myText2_t:=$myText2_t+"$result:=$regex.extract($str)"
-			
-		End if 
-		
-		
-		
+	: ($function_t="Match")
+		$method_t:="match"
+	: ($function_t="Matches")
+		$method_t:="matches"
+	: ($function_t="Substitute")
+		$method_t:="substitute"
+	: ($function_t="Split")
+		$method_t:="split"
+	: ($function_t="Extract")
+		$method_t:="extract"
 	Else 
-		BEEP
-		
-		TRACE
-		
+		$method_t:=""
 End case 
 
-SET TEXT TO PASTEBOARD($myText2_t)
-
-  //--------------------------------------------------------
-  //Réinitialisation des diverses variables et tableaux
-$myText_t:=""
-$myText2_t:=""
-$myTextReplacement_t:=""
-
-  //--------------------------------------------------------
-
-
-
-
-
-
+If ($method_t#"")
+	$code_t:="var $regex : Object:=New regex\r"
+	$code_t:=$code_t+"var $params : Object:={pattern: "+convert_escape_character(String(Form.testSelected.pattern))
+	$code_t:=$code_t+"; string: "+convert_escape_character(String(Form.testSelected.target))
+	
+	If ($method_t="substitute")
+		$code_t:=$code_t+"; string_for_replacement: "+convert_escape_character(String(Form.testSelected.replacement))
+	End if 
+	
+	If ($method_t="extract")
+		$groups_c:=New collection
+		For each ($group_t; Split string(String(Form.testSelected.groupList); ","; sk ignore empty strings+sk trim spaces))
+			$groups_c.push(String(Num($group_t)))
+		End for each 
+		If ($groups_c.length>0)
+			$code_t:=$code_t+"; group: ["+$groups_c.join("; ")+"]"
+		End if 
+	End if 
+	
+	$code_t:=$code_t+"}\r"
+	$code_t:=$code_t+"var $result : Object:=$regex."+$method_t+"($params)\r"
+	SET TEXT TO PASTEBOARD($code_t)
+Else 
+	BEEP
+End if 
