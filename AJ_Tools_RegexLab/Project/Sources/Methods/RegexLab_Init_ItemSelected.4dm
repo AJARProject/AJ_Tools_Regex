@@ -3,7 +3,9 @@
   //
   // collection : (object) init testSelected object
 
-If (False:C215)
+#DECLARE() -> $result : Object
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Maurice Inzirillo
 	  // Date and time: 25.10.18, 13:52:05
@@ -17,9 +19,9 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
-C_OBJECT:C1216($0;$testSelected_obj)
+var $testSelected_obj : Object
 
-$testSelected_obj:=New object:C1471
+$testSelected_obj:=New object
 
   //init property
 $testSelected_obj.description:=""
@@ -29,4 +31,4 @@ $testSelected_obj.target:=""
 $testSelected_obj.groupList:=""
 $testSelected_obj.replacement:=""
 
-$0:=$testSelected_obj
+$result:=$testSelected_obj

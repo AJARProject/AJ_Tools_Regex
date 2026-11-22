@@ -1,21 +1,24 @@
 //%attributes = {"shared":true,"preemptive":"capable"}
-  // ----------------------------------------------------
-  // User name (OS): Maurice Inzirillo
-  // Date and time: 19.10.18, 18:15:04
-  // ----------------------------------------------------
-  // Method: New Regex
-  // Description
-  // 
-  // Object builder to call regex methods
-  // 
-  // ----------------------------------------------------
-C_OBJECT:C1216($0;$regex)
-  // regex object include formula for : match, substitute, split, extract
-$regex:=New object:C1471
-$regex.match:=Formula:C1597(Match ($1))
-$regex.matches:=Formula:C1597(Matches ($1))
-$regex.substitute:=Formula:C1597(Substitute ($1))
-$regex.split:=Formula:C1597(Split ($1))
-$regex.extract:=Formula:C1597(Extract ($1))
+// ----------------------------------------------------
+// User name (OS): Maurice Inzirillo
+// Date and time: 19.10.18, 18:15:04
+// ----------------------------------------------------
+// Method: New regex
+// Description
+//
+// Object builder to call regex methods
+// The returned object contains formulas for: match, matches, substitute, split, extract
+//
+// ----------------------------------------------------
+#DECLARE() : Object
 
-$0:=$regex
+var $regex : Object
+
+$regex:=New object
+$regex.match:=Formula(Match($1))
+$regex.matches:=Formula(Matches($1))
+$regex.substitute:=Formula(Substitute($1))
+$regex.split:=Formula(Split($1))
+$regex.extract:=Formula(Extract($1))
+
+return $regex

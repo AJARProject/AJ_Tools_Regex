@@ -7,7 +7,9 @@
   // txt : (Text) param
   // index : (Longint) return Index of first value found, or -1 if not found
 
-If (False:C215)
+#DECLARE($param1 : Object; $param2 : Text)
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Maurice Inzirillo
 	  // Date and time: 25.10.18, 16:46:57
@@ -20,6 +22,4 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
-C_OBJECT:C1216($1)
-C_TEXT:C284($2)
-$1.result:=$1.value.function=$2
+$param1.result:=$param1.value.function=$param2

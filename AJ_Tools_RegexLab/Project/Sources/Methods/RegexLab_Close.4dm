@@ -13,5 +13,5 @@ RegexLab_save_data
 
 RegexLab_Menu ("release")
 
-CANCEL:C270
+CANCEL
 

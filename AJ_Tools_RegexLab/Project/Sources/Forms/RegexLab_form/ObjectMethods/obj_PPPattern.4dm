@@ -12,17 +12,18 @@
 
 
 
-dragElement (Form event code:C388;Form:C1466.testSelected.pattern;Form:C1466.testSelected.replacement;"Pattern")
+var $vp_Pattern_button; $vp_Replacement_button : Pointer
+dragElement (Form event code;Form.testSelected.pattern;Form.testSelected.replacement;"Pattern")
 
   // clipboard button "pattern"
-$vp_Pattern_button:=OBJECT Get pointer:C1124(Object named:K67:5;"obj_PPPattern")
+$vp_Pattern_button:=OBJECT Get pointer(Object named;"obj_PPPattern")
 $vp_Pattern_button->:=2
 
   // clipboard button "replacement"
-$vp_Replacement_button:=OBJECT Get pointer:C1124(Object named:K67:5;"obj_PPReplacement")
+$vp_Replacement_button:=OBJECT Get pointer(Object named;"obj_PPReplacement")
 $vp_Replacement_button->:=0
 
-OBJECT SET FORMAT:C236(*;"obj_PPPattern";"1;4;?2075;0")
-OBJECT SET FORMAT:C236(*;"obj_PPReplacement";"1;4;?2075;160")
+OBJECT SET FORMAT(*;"obj_PPPattern";"1;4;?2075;0")
+OBJECT SET FORMAT(*;"obj_PPReplacement";"1;4;?2075;160")
 
 

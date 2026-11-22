@@ -1,0 +1,2714 @@
+[
+	{
+		"id": "m01",
+		"fn": "match",
+		"result": {
+			"success": true,
+			"string_extracted": "abbbc",
+			"position": 1,
+			"length": 5,
+			"listbox": [
+				{
+					"position": 1,
+					"length": 5,
+					"group": 0,
+					"string_extracted": "abbbc"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "a.*c",
+			"string": "abbbc"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "m02",
+		"fn": "match",
+		"result": {
+			"success": true,
+			"string_extracted": "bbb",
+			"position": 2,
+			"length": 3,
+			"listbox": [
+				{
+					"position": 2,
+					"length": 3,
+					"group": 0,
+					"string_extracted": "bbb"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "b+",
+			"string": "abbbc"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "m03",
+		"fn": "match",
+		"result": {
+			"success": true,
+			"string_extracted": "bbb",
+			"position": 2,
+			"length": 3,
+			"listbox": [
+				{
+					"position": 2,
+					"length": 3,
+					"group": 0,
+					"string_extracted": "bbb"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "b+",
+			"string": "abbbc",
+			"position_only": true,
+			"start": 2
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "m04",
+		"fn": "match",
+		"result": {
+			"success": false,
+			"string_extracted": "",
+			"position": 0,
+			"length": 0,
+			"listbox": []
+		},
+		"reqAfter": {
+			"pattern": "b+",
+			"string": "abbbc",
+			"position_only": true,
+			"start": 1
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "m05",
+		"fn": "match",
+		"result": {
+			"success": true,
+			"string_extracted": "bb",
+			"position": 3,
+			"length": 2,
+			"listbox": [
+				{
+					"position": 3,
+					"length": 2,
+					"group": 0,
+					"string_extracted": "bb"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "b+",
+			"string": "abbbc",
+			"start": 3
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "m06",
+		"fn": "match",
+		"result": {
+			"success": true,
+			"string_extracted": "6C7122D2-8986-41E8-8B3D-D50786486706",
+			"position": 1,
+			"length": 36,
+			"listbox": [
+				{
+					"position": 1,
+					"length": 36,
+					"group": 0,
+					"string_extracted": "6C7122D2-8986-41E8-8B3D-D50786486706"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "[:xdigit:]{8}-[:xdigit:]{4}-[:xdigit:]{4}-[:xdigit:]{4}-[:xdigit:]{12}",
+			"string": "6C7122D2-8986-41E8-8B3D-D50786486706"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "m07",
+		"fn": "match",
+		"result": {
+			"success": false,
+			"string_extracted": "",
+			"position": 0,
+			"length": 0,
+			"listbox": []
+		},
+		"reqAfter": {
+			"pattern": "",
+			"string": "abc"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "m08",
+		"fn": "match",
+		"result": {
+			"success": false,
+			"string_extracted": "",
+			"position": 0,
+			"length": 0,
+			"listbox": []
+		},
+		"reqAfter": {
+			"pattern": "a"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "m09",
+		"fn": "match",
+		"result": {
+			"success": false
+		},
+		"reqAfter": null,
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "m10",
+		"fn": "match",
+		"result": {
+			"success": true,
+			"string_extracted": "é",
+			"position": 4,
+			"length": 1,
+			"listbox": [
+				{
+					"position": 4,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "é"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "é+",
+			"string": "café"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "m11",
+		"fn": "match",
+		"result": {
+			"success": true,
+			"string_extracted": "café",
+			"position": 1,
+			"length": 4,
+			"listbox": [
+				{
+					"position": 1,
+					"length": 4,
+					"group": 0,
+					"string_extracted": "café"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "caf.",
+			"string": "café"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "m12",
+		"fn": "match",
+		"result": {
+			"success": true,
+			"string_extracted": "abc",
+			"position": 1,
+			"length": 3,
+			"listbox": [
+				{
+					"position": 1,
+					"length": 3,
+					"group": 0,
+					"string_extracted": "abc"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "(?i)ABC",
+			"string": "abc"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "m13",
+		"fn": "match",
+		"result": {
+			"success": true,
+			"string_extracted": "12-34",
+			"position": 3,
+			"length": 5,
+			"listbox": [
+				{
+					"position": 3,
+					"length": 5,
+					"group": 0,
+					"string_extracted": "12-34"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "(\\d+)-(\\d+)",
+			"string": "x 12-34 y"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "x01",
+		"fn": "matches",
+		"result": {
+			"success": true,
+			"string_extracted": [
+				"12-34",
+				"12",
+				"34",
+				"5-6",
+				"5",
+				"6"
+			],
+			"position": [
+				3,
+				3,
+				6,
+				11,
+				11,
+				13
+			],
+			"length": [
+				5,
+				2,
+				2,
+				3,
+				1,
+				1
+			],
+			"group": [
+				0,
+				1,
+				2,
+				0,
+				1,
+				2
+			],
+			"listbox": [
+				{
+					"position": 3,
+					"length": 5,
+					"group": 0,
+					"string_extracted": "12-34"
+				},
+				{
+					"position": 3,
+					"length": 2,
+					"group": 1,
+					"string_extracted": "12"
+				},
+				{
+					"position": 6,
+					"length": 2,
+					"group": 2,
+					"string_extracted": "34"
+				},
+				{
+					"position": 11,
+					"length": 3,
+					"group": 0,
+					"string_extracted": "5-6"
+				},
+				{
+					"position": 11,
+					"length": 1,
+					"group": 1,
+					"string_extracted": "5"
+				},
+				{
+					"position": 13,
+					"length": 1,
+					"group": 2,
+					"string_extracted": "6"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "(\\d+)-(\\d+)",
+			"string": "a 12-34 b 5-6"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "x02",
+		"fn": "matches",
+		"result": {
+			"success": true,
+			"string_extracted": [
+				"one",
+				"two",
+				"three"
+			],
+			"position": [
+				1,
+				5,
+				10
+			],
+			"length": [
+				3,
+				3,
+				5
+			],
+			"group": [
+				0,
+				0,
+				0
+			],
+			"listbox": [
+				{
+					"position": 1,
+					"length": 3,
+					"group": 0,
+					"string_extracted": "one"
+				},
+				{
+					"position": 5,
+					"length": 3,
+					"group": 0,
+					"string_extracted": "two"
+				},
+				{
+					"position": 10,
+					"length": 5,
+					"group": 0,
+					"string_extracted": "three"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "\\w+",
+			"string": "one two  three"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "x03",
+		"fn": "matches",
+		"result": {
+			"success": true,
+			"string_extracted": [
+				"two",
+				"three"
+			],
+			"position": [
+				5,
+				10
+			],
+			"length": [
+				3,
+				5
+			],
+			"group": [
+				0,
+				0
+			],
+			"listbox": [
+				{
+					"position": 5,
+					"length": 3,
+					"group": 0,
+					"string_extracted": "two"
+				},
+				{
+					"position": 10,
+					"length": 5,
+					"group": 0,
+					"string_extracted": "three"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "\\w+",
+			"string": "one two  three",
+			"start": 5
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "x04",
+		"fn": "matches",
+		"result": {
+			"success": true,
+			"string_extracted": [
+				"12"
+			],
+			"position": [
+				3
+			],
+			"length": [
+				2
+			],
+			"group": [
+				0
+			],
+			"listbox": [
+				{
+					"position": 3,
+					"length": 2,
+					"group": 0,
+					"string_extracted": "12"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "\\d+",
+			"string": "ab12cd34",
+			"position_only": true,
+			"start": 3
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "x05",
+		"fn": "matches",
+		"result": {
+			"success": false,
+			"string_extracted": [],
+			"position": [],
+			"length": [],
+			"group": [],
+			"listbox": []
+		},
+		"reqAfter": {
+			"pattern": "z",
+			"string": "abc"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "x06",
+		"fn": "matches",
+		"result": {
+			"success": true,
+			"string_extracted": [
+				"",
+				"aa"
+			],
+			"position": [
+				1,
+				2
+			],
+			"length": [
+				0,
+				2
+			],
+			"group": [
+				0,
+				0
+			],
+			"listbox": [
+				{
+					"position": 1,
+					"length": 0,
+					"group": 0,
+					"string_extracted": ""
+				},
+				{
+					"position": 2,
+					"length": 2,
+					"group": 0,
+					"string_extracted": "aa"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "a*",
+			"string": "baac"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "x07",
+		"fn": "matches",
+		"result": {
+			"success": false
+		},
+		"reqAfter": {
+			"pattern": "",
+			"string": "abc"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "x08",
+		"fn": "matches",
+		"result": {
+			"success": false
+		},
+		"reqAfter": null,
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "x09",
+		"fn": "matches",
+		"result": {
+			"success": true,
+			"string_extracted": [
+				"a",
+				"a",
+				"",
+				"b",
+				"",
+				"b"
+			],
+			"position": [
+				1,
+				1,
+				-1,
+				2,
+				-1,
+				2
+			],
+			"length": [
+				1,
+				1,
+				0,
+				1,
+				0,
+				1
+			],
+			"group": [
+				0,
+				1,
+				2,
+				0,
+				1,
+				2
+			],
+			"listbox": [
+				{
+					"position": 1,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "a"
+				},
+				{
+					"position": 1,
+					"length": 1,
+					"group": 1,
+					"string_extracted": "a"
+				},
+				{
+					"position": -1,
+					"length": 0,
+					"group": 2,
+					"string_extracted": ""
+				},
+				{
+					"position": 2,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "b"
+				},
+				{
+					"position": -1,
+					"length": 0,
+					"group": 1,
+					"string_extracted": ""
+				},
+				{
+					"position": 2,
+					"length": 1,
+					"group": 2,
+					"string_extracted": "b"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "(a)|(b)",
+			"string": "ab"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "x10",
+		"fn": "matches",
+		"result": {
+			"success": true,
+			"string_extracted": [
+				"l1",
+				"l2"
+			],
+			"position": [
+				1,
+				6
+			],
+			"length": [
+				2,
+				2
+			],
+			"group": [
+				0,
+				0
+			],
+			"listbox": [
+				{
+					"position": 1,
+					"length": 2,
+					"group": 0,
+					"string_extracted": "l1"
+				},
+				{
+					"position": 6,
+					"length": 2,
+					"group": 0,
+					"string_extracted": "l2"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "(?m)^\\w+",
+			"string": "l1 x\nl2 y"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "x11",
+		"fn": "matches",
+		"result": {
+			"success": true,
+			"string_extracted": [
+				"ISBN 9790765335999",
+				"9790765335999",
+				"",
+				"ISBN-13: 978-0615-856-73-5",
+				"978-0615-856-73-5",
+				"-",
+				"ISBN-13: 978-0615856735",
+				"978-0615856735",
+				"-"
+			],
+			"position": [
+				1,
+				6,
+				9,
+				20,
+				29,
+				32,
+				47,
+				56,
+				59
+			],
+			"length": [
+				18,
+				13,
+				0,
+				26,
+				17,
+				1,
+				23,
+				14,
+				1
+			],
+			"group": [
+				0,
+				1,
+				2,
+				0,
+				1,
+				2,
+				0,
+				1,
+				2
+			],
+			"listbox": [
+				{
+					"position": 1,
+					"length": 18,
+					"group": 0,
+					"string_extracted": "ISBN 9790765335999"
+				},
+				{
+					"position": 6,
+					"length": 13,
+					"group": 1,
+					"string_extracted": "9790765335999"
+				},
+				{
+					"position": 9,
+					"length": 0,
+					"group": 2,
+					"string_extracted": ""
+				},
+				{
+					"position": 20,
+					"length": 26,
+					"group": 0,
+					"string_extracted": "ISBN-13: 978-0615-856-73-5"
+				},
+				{
+					"position": 29,
+					"length": 17,
+					"group": 1,
+					"string_extracted": "978-0615-856-73-5"
+				},
+				{
+					"position": 32,
+					"length": 1,
+					"group": 2,
+					"string_extracted": "-"
+				},
+				{
+					"position": 47,
+					"length": 23,
+					"group": 0,
+					"string_extracted": "ISBN-13: 978-0615856735"
+				},
+				{
+					"position": 56,
+					"length": 14,
+					"group": 1,
+					"string_extracted": "978-0615856735"
+				},
+				{
+					"position": 59,
+					"length": 1,
+					"group": 2,
+					"string_extracted": "-"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "ISBN(?:-13)?:?\\x20(97(?:8|9)([ -]?)(?=\\d{1,5}\\2?\\d{1,7}\\2?\\d{1,6}\\2?\\d)(?:\\d\\2*){9}\\d)",
+			"string": "ISBN 9790765335999\nISBN-13: 978-0615-856-73-5\nISBN-13: 978-0615856735"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "s01",
+		"fn": "substitute",
+		"result": {
+			"success": true,
+			"string_extracted": null,
+			"position": [
+				2,
+				2,
+				19,
+				19
+			],
+			"length": [
+				4,
+				2,
+				2,
+				1
+			],
+			"group": [
+				0,
+				1,
+				0,
+				1
+			],
+			"listbox": [
+				{
+					"position": 2,
+					"length": 4,
+					"group": 0,
+					"string_extracted": "abab"
+				},
+				{
+					"position": 2,
+					"length": 2,
+					"group": 1,
+					"string_extracted": "ab"
+				},
+				{
+					"position": 19,
+					"length": 2,
+					"group": 0,
+					"string_extracted": "aa"
+				},
+				{
+					"position": 19,
+					"length": 1,
+					"group": 1,
+					"string_extracted": "a"
+				}
+			],
+			"string_match": [
+				"abab",
+				"ab",
+				"aa",
+				"a"
+			],
+			"string_resulting": "\"ab\" but not \"abab\""
+		},
+		"reqAfter": {
+			"pattern": "([ab]+)\\1",
+			"string": "\"abab\" but not \"abaab\"",
+			"string_for_replacement": "\\1"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "s02",
+		"fn": "substitute",
+		"result": {
+			"success": true,
+			"string_extracted": null,
+			"position": [
+				2,
+				4
+			],
+			"length": [
+				1,
+				2
+			],
+			"group": [
+				0,
+				0
+			],
+			"listbox": [
+				{
+					"position": 2,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "1"
+				},
+				{
+					"position": 4,
+					"length": 2,
+					"group": 0,
+					"string_extracted": "22"
+				}
+			],
+			"string_match": [
+				"1",
+				"22"
+			],
+			"string_resulting": "a<1>b<22>"
+		},
+		"reqAfter": {
+			"pattern": "\\d+",
+			"string": "a1b22",
+			"string_for_replacement": "<\\0>"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "s03",
+		"fn": "substitute",
+		"result": {
+			"success": true,
+			"string_extracted": null,
+			"position": [
+				1,
+				1,
+				7
+			],
+			"length": [
+				11,
+				5,
+				5
+			],
+			"group": [
+				0,
+				1,
+				2
+			],
+			"listbox": [
+				{
+					"position": 1,
+					"length": 11,
+					"group": 0,
+					"string_extracted": "hello world"
+				},
+				{
+					"position": 1,
+					"length": 5,
+					"group": 1,
+					"string_extracted": "hello"
+				},
+				{
+					"position": 7,
+					"length": 5,
+					"group": 2,
+					"string_extracted": "world"
+				}
+			],
+			"string_match": [
+				"hello world",
+				"hello",
+				"world"
+			],
+			"string_resulting": "world hello"
+		},
+		"reqAfter": {
+			"pattern": "(\\w+) (\\w+)",
+			"string": "hello world",
+			"string_for_replacement": "\\2 \\1"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "s04",
+		"fn": "substitute",
+		"result": {
+			"success": true,
+			"string_extracted": null,
+			"position": [
+				2,
+				4
+			],
+			"length": [
+				1,
+				2
+			],
+			"group": [
+				0,
+				0
+			],
+			"listbox": [
+				{
+					"position": 2,
+					"length": 1,
+					"group": 0,
+					"string_extracted": " "
+				},
+				{
+					"position": 4,
+					"length": 2,
+					"group": 0,
+					"string_extracted": "  "
+				}
+			],
+			"string_match": [
+				" ",
+				"  "
+			],
+			"string_resulting": "abc"
+		},
+		"reqAfter": {
+			"pattern": "\\s+",
+			"string": "a b  c",
+			"string_for_replacement": ""
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "s05",
+		"fn": "substitute",
+		"result": {
+			"success": false,
+			"string_extracted": [],
+			"position": [],
+			"length": [],
+			"group": [],
+			"listbox": []
+		},
+		"reqAfter": {
+			"pattern": "z",
+			"string": "abc",
+			"string_for_replacement": "y"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "s06",
+		"fn": "substitute",
+		"result": {
+			"success": true,
+			"string_extracted": null,
+			"position": [
+				1,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12
+			],
+			"length": [
+				12,
+				1,
+				1,
+				1,
+				1,
+				1,
+				1,
+				1,
+				1,
+				1,
+				1,
+				1,
+				1
+			],
+			"group": [
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12
+			],
+			"listbox": [
+				{
+					"position": 1,
+					"length": 12,
+					"group": 0,
+					"string_extracted": "abcdefghijkl"
+				},
+				{
+					"position": 1,
+					"length": 1,
+					"group": 1,
+					"string_extracted": "a"
+				},
+				{
+					"position": 2,
+					"length": 1,
+					"group": 2,
+					"string_extracted": "b"
+				},
+				{
+					"position": 3,
+					"length": 1,
+					"group": 3,
+					"string_extracted": "c"
+				},
+				{
+					"position": 4,
+					"length": 1,
+					"group": 4,
+					"string_extracted": "d"
+				},
+				{
+					"position": 5,
+					"length": 1,
+					"group": 5,
+					"string_extracted": "e"
+				},
+				{
+					"position": 6,
+					"length": 1,
+					"group": 6,
+					"string_extracted": "f"
+				},
+				{
+					"position": 7,
+					"length": 1,
+					"group": 7,
+					"string_extracted": "g"
+				},
+				{
+					"position": 8,
+					"length": 1,
+					"group": 8,
+					"string_extracted": "h"
+				},
+				{
+					"position": 9,
+					"length": 1,
+					"group": 9,
+					"string_extracted": "i"
+				},
+				{
+					"position": 10,
+					"length": 1,
+					"group": 10,
+					"string_extracted": "j"
+				},
+				{
+					"position": 11,
+					"length": 1,
+					"group": 11,
+					"string_extracted": "k"
+				},
+				{
+					"position": 12,
+					"length": 1,
+					"group": 12,
+					"string_extracted": "l"
+				}
+			],
+			"string_match": [
+				"abcdefghijkl",
+				"a",
+				"b",
+				"c",
+				"d",
+				"e",
+				"f",
+				"g",
+				"h",
+				"i",
+				"j",
+				"k",
+				"l"
+			],
+			"string_resulting": "[j|a|l]"
+		},
+		"reqAfter": {
+			"pattern": "(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)",
+			"string": "abcdefghijkl",
+			"string_for_replacement": "[\\10|\\1|\\12]"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "s07",
+		"fn": "substitute",
+		"result": {
+			"success": true,
+			"string_extracted": null,
+			"position": [
+				2,
+				4
+			],
+			"length": [
+				1,
+				1
+			],
+			"group": [
+				0,
+				0
+			],
+			"listbox": [
+				{
+					"position": 2,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "1"
+				},
+				{
+					"position": 4,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "2"
+				}
+			],
+			"string_match": [
+				"1",
+				"2"
+			],
+			"string_resulting": "ab"
+		},
+		"reqAfter": {
+			"pattern": "\\d",
+			"string": "a1b2"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "s08",
+		"fn": "substitute",
+		"result": {
+			"success": false
+		},
+		"reqAfter": null,
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "s09",
+		"fn": "substitute",
+		"result": {
+			"success": true,
+			"string_extracted": null,
+			"position": [
+				1,
+				1,
+				2,
+				4,
+				4,
+				5
+			],
+			"length": [
+				2,
+				1,
+				1,
+				2,
+				1,
+				1
+			],
+			"group": [
+				0,
+				1,
+				2,
+				0,
+				1,
+				2
+			],
+			"listbox": [
+				{
+					"position": 1,
+					"length": 2,
+					"group": 0,
+					"string_extracted": "12"
+				},
+				{
+					"position": 1,
+					"length": 1,
+					"group": 1,
+					"string_extracted": "1"
+				},
+				{
+					"position": 2,
+					"length": 1,
+					"group": 2,
+					"string_extracted": "2"
+				},
+				{
+					"position": 4,
+					"length": 2,
+					"group": 0,
+					"string_extracted": "34"
+				},
+				{
+					"position": 4,
+					"length": 1,
+					"group": 1,
+					"string_extracted": "3"
+				},
+				{
+					"position": 5,
+					"length": 1,
+					"group": 2,
+					"string_extracted": "4"
+				}
+			],
+			"string_match": [
+				"12",
+				"1",
+				"2",
+				"34",
+				"3",
+				"4"
+			],
+			"string_resulting": "21 43"
+		},
+		"reqAfter": {
+			"pattern": "(\\d)(\\d)",
+			"string": "12 34",
+			"string_for_replacement": "\\2\\1"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "s10",
+		"fn": "substitute",
+		"result": {
+			"success": true,
+			"string_extracted": null,
+			"position": [
+				2,
+				3,
+				6,
+				7
+			],
+			"length": [
+				1,
+				1,
+				1,
+				1
+			],
+			"group": [
+				0,
+				0,
+				0,
+				0
+			],
+			"listbox": [
+				{
+					"position": 2,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "o"
+				},
+				{
+					"position": 3,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "o"
+				},
+				{
+					"position": 6,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "o"
+				},
+				{
+					"position": 7,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "o"
+				}
+			],
+			"string_match": [
+				"o",
+				"o",
+				"o",
+				"o"
+			],
+			"string_resulting": "f00 b00"
+		},
+		"reqAfter": {
+			"pattern": "o",
+			"string": "foo boo",
+			"string_for_replacement": "0"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "p01",
+		"fn": "split",
+		"result": {
+			"success": true,
+			"string_extracted": [
+				"a",
+				"b",
+				"c"
+			],
+			"text_extracted": [
+				"a",
+				"b",
+				"c"
+			],
+			"position": [
+				1,
+				4,
+				6
+			],
+			"length": [
+				1,
+				1,
+				1
+			],
+			"listbox": [
+				{
+					"position": 1,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "a"
+				},
+				{
+					"position": 4,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "b"
+				},
+				{
+					"position": 6,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "c"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": ",\\s*",
+			"string": "a, b,c"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "p02",
+		"fn": "split",
+		"result": {
+			"success": true,
+			"string_extracted": [
+				"Maurice",
+				"Javascript",
+				"4D"
+			],
+			"text_extracted": [
+				"Maurice",
+				"Javascript",
+				"4D"
+			],
+			"position": [
+				1,
+				13,
+				27
+			],
+			"length": [
+				7,
+				10,
+				2
+			],
+			"listbox": [
+				{
+					"position": 1,
+					"length": 7,
+					"group": 0,
+					"string_extracted": "Maurice"
+				},
+				{
+					"position": 13,
+					"length": 10,
+					"group": 0,
+					"string_extracted": "Javascript"
+				},
+				{
+					"position": 27,
+					"length": 2,
+					"group": 0,
+					"string_extracted": "4D"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "\\s+(AND|OR)\\s+",
+			"string": "Maurice AND Javascript OR 4D"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "p03",
+		"fn": "split",
+		"result": {
+			"success": false,
+			"string_extracted": [
+				"abc"
+			],
+			"text_extracted": [
+				"abc"
+			],
+			"position": [
+				1
+			],
+			"length": [
+				3
+			],
+			"listbox": [
+				{
+					"position": 1,
+					"length": 3,
+					"group": 0,
+					"string_extracted": "abc"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "x",
+			"string": "abc"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "p04",
+		"fn": "split",
+		"result": {
+			"success": true,
+			"string_extracted": [
+				"",
+				"a",
+				"b"
+			],
+			"text_extracted": [
+				"",
+				"a",
+				"b"
+			],
+			"position": [
+				1,
+				2,
+				4
+			],
+			"length": [
+				0,
+				1,
+				1
+			],
+			"listbox": [
+				{
+					"position": 1,
+					"length": 0,
+					"group": 0,
+					"string_extracted": ""
+				},
+				{
+					"position": 2,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "a"
+				},
+				{
+					"position": 4,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "b"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": ",",
+			"string": ",a,b"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "p05",
+		"fn": "split",
+		"result": {
+			"success": true,
+			"string_extracted": [
+				"a",
+				"b"
+			],
+			"text_extracted": [
+				"a",
+				"b"
+			],
+			"position": [
+				1,
+				3
+			],
+			"length": [
+				1,
+				1
+			],
+			"listbox": [
+				{
+					"position": 1,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "a"
+				},
+				{
+					"position": 3,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "b"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": ",",
+			"string": "a,b,"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "p06",
+		"fn": "split",
+		"result": {
+			"success": false,
+			"string_extracted": [
+				""
+			],
+			"text_extracted": [
+				""
+			],
+			"position": [],
+			"length": [],
+			"listbox": []
+		},
+		"reqAfter": {
+			"pattern": "x*",
+			"string": "abc"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "p07",
+		"fn": "split",
+		"result": {
+			"success": false
+		},
+		"reqAfter": {
+			"pattern": ",",
+			"string": ""
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "p08",
+		"fn": "split",
+		"result": {
+			"success": false
+		},
+		"reqAfter": null,
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "e01",
+		"fn": "extract",
+		"result": {
+			"success": true,
+			"string_extracted": [
+				"34",
+				"6"
+			],
+			"position": [
+				6,
+				13
+			],
+			"length": [
+				2,
+				1
+			],
+			"group": [
+				2,
+				2
+			],
+			"listbox": [
+				{
+					"position": 6,
+					"length": 2,
+					"group": 2,
+					"string_extracted": "34"
+				},
+				{
+					"position": 13,
+					"length": 1,
+					"group": 2,
+					"string_extracted": "6"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "(\\d+)-(\\d+)",
+			"string": "a 12-34 b 5-6",
+			"group": [
+				"2"
+			]
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "e02",
+		"fn": "extract",
+		"result": {
+			"success": true,
+			"string_extracted": [
+				"12-34",
+				"5-6",
+				"12",
+				"5"
+			],
+			"position": [
+				3,
+				11,
+				3,
+				11
+			],
+			"length": [
+				5,
+				3,
+				2,
+				1
+			],
+			"group": [
+				0,
+				0,
+				1,
+				1
+			],
+			"listbox": [
+				{
+					"position": 3,
+					"length": 5,
+					"group": 0,
+					"string_extracted": "12-34"
+				},
+				{
+					"position": 11,
+					"length": 3,
+					"group": 0,
+					"string_extracted": "5-6"
+				},
+				{
+					"position": 3,
+					"length": 2,
+					"group": 1,
+					"string_extracted": "12"
+				},
+				{
+					"position": 11,
+					"length": 1,
+					"group": 1,
+					"string_extracted": "5"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "(\\d+)-(\\d+)",
+			"string": "a 12-34 b 5-6",
+			"group": [
+				0,
+				1
+			]
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "e03",
+		"fn": "extract",
+		"result": {
+			"success": true,
+			"string_extracted": [
+				"12-34",
+				"5-6"
+			],
+			"position": [
+				3,
+				11
+			],
+			"length": [
+				5,
+				3
+			],
+			"group": [
+				0,
+				0
+			],
+			"listbox": [
+				{
+					"position": 3,
+					"length": 5,
+					"group": 0,
+					"string_extracted": "12-34"
+				},
+				{
+					"position": 11,
+					"length": 3,
+					"group": 0,
+					"string_extracted": "5-6"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "(\\d+)-(\\d+)",
+			"string": "a 12-34 b 5-6"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "e04",
+		"fn": "extract",
+		"result": {
+			"success": true,
+			"string_extracted": [
+				"12-34",
+				"5-6"
+			],
+			"position": [
+				3,
+				11
+			],
+			"length": [
+				5,
+				3
+			],
+			"group": [
+				0,
+				0
+			],
+			"listbox": [
+				{
+					"position": 3,
+					"length": 5,
+					"group": 0,
+					"string_extracted": "12-34"
+				},
+				{
+					"position": 11,
+					"length": 3,
+					"group": 0,
+					"string_extracted": "5-6"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "(\\d+)-(\\d+)",
+			"string": "a 12-34 b 5-6",
+			"group": []
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "e05",
+		"fn": "extract",
+		"result": {
+			"success": true,
+			"string_extracted": [
+				"aaa",
+				"b b",
+				"\"\"\"c\"\" cc\"",
+				"1",
+				"",
+				"\"333\"",
+				"\"12,45,45\"",
+				"three",
+				"",
+				"still more threes"
+			],
+			"position": [
+				1,
+				5,
+				9,
+				20,
+				22,
+				23,
+				29,
+				40,
+				46,
+				47
+			],
+			"length": [
+				3,
+				3,
+				10,
+				1,
+				0,
+				5,
+				10,
+				5,
+				0,
+				17
+			],
+			"group": [
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2
+			],
+			"listbox": [
+				{
+					"position": 1,
+					"length": 3,
+					"group": 2,
+					"string_extracted": "aaa"
+				},
+				{
+					"position": 5,
+					"length": 3,
+					"group": 2,
+					"string_extracted": "b b"
+				},
+				{
+					"position": 9,
+					"length": 10,
+					"group": 2,
+					"string_extracted": "\"\"\"c\"\" cc\""
+				},
+				{
+					"position": 20,
+					"length": 1,
+					"group": 2,
+					"string_extracted": "1"
+				},
+				{
+					"position": 22,
+					"length": 0,
+					"group": 2,
+					"string_extracted": ""
+				},
+				{
+					"position": 23,
+					"length": 5,
+					"group": 2,
+					"string_extracted": "\"333\""
+				},
+				{
+					"position": 29,
+					"length": 10,
+					"group": 2,
+					"string_extracted": "\"12,45,45\""
+				},
+				{
+					"position": 40,
+					"length": 5,
+					"group": 2,
+					"string_extracted": "three"
+				},
+				{
+					"position": 46,
+					"length": 0,
+					"group": 2,
+					"string_extracted": ""
+				},
+				{
+					"position": 47,
+					"length": 17,
+					"group": 2,
+					"string_extracted": "still more threes"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "(?m)(,|\\r?\\n|^)([^\",\\r\\n]+|\"(?:[^\"]|\"\")*\"|)",
+			"string": "aaa,b b,\"\"\"c\"\" cc\"\n1,,\"333\",\"12,45,45\",three,\nstill more threes",
+			"group": [
+				"2"
+			]
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "e06",
+		"fn": "extract",
+		"result": {
+			"success": false,
+			"string_extracted": [],
+			"position": [],
+			"length": [],
+			"group": [],
+			"listbox": []
+		},
+		"reqAfter": {
+			"pattern": "z",
+			"string": "abc",
+			"group": [
+				0
+			]
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "e07",
+		"fn": "extract",
+		"result": {
+			"success": false
+		},
+		"reqAfter": null,
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "e08",
+		"fn": "extract",
+		"result": {
+			"success": false,
+			"string_extracted": [],
+			"position": [],
+			"length": [],
+			"group": [],
+			"listbox": []
+		},
+		"reqAfter": {
+			"pattern": "",
+			"string": "abc",
+			"group": [
+				0
+			]
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "f01",
+		"fn": "match",
+		"result": {
+			"success": false,
+			"string_extracted": "",
+			"position": 0,
+			"length": 0,
+			"listbox": []
+		},
+		"reqAfter": {
+			"pattern": "b+",
+			"string": "abbbc",
+			"whole_string": true
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "f02",
+		"fn": "match",
+		"result": {
+			"success": true,
+			"string_extracted": "abbbc",
+			"position": 1,
+			"length": 5,
+			"listbox": [
+				{
+					"position": 1,
+					"length": 5,
+					"group": 0,
+					"string_extracted": "abbbc"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "a.*c",
+			"string": "abbbc",
+			"whole_string": true
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "f03",
+		"fn": "match",
+		"result": {
+			"success": true,
+			"string_extracted": "c",
+			"position": 6,
+			"length": 1,
+			"listbox": [
+				{
+					"position": 6,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "c"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "c",
+			"string": "abcabc",
+			"start": 4
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "f04",
+		"fn": "match",
+		"result": {
+			"success": false,
+			"string_extracted": "",
+			"position": 0,
+			"length": 0,
+			"listbox": []
+		},
+		"reqAfter": {
+			"pattern": "b",
+			"string": "abc",
+			"start": 10
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "f05",
+		"fn": "match",
+		"result": {
+			"success": true,
+			"string_extracted": "b",
+			"position": 2,
+			"length": 1,
+			"listbox": [
+				{
+					"position": 2,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "b"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "b",
+			"string": "abc",
+			"start": 0
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "f06",
+		"fn": "match",
+		"result": {
+			"success": false,
+			"string_extracted": "",
+			"position": 0,
+			"length": 0,
+			"listbox": []
+		},
+		"reqAfter": {
+			"pattern": "b",
+			"string": "abc",
+			"position_only": true,
+			"start": 1
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "f07",
+		"fn": "substitute",
+		"result": {
+			"success": true,
+			"string_extracted": null,
+			"position": [
+				1,
+				1,
+				2
+			],
+			"length": [
+				3,
+				1,
+				2
+			],
+			"group": [
+				0,
+				1,
+				2
+			],
+			"listbox": [
+				{
+					"position": 1,
+					"length": 3,
+					"group": 0,
+					"string_extracted": "a\\1"
+				},
+				{
+					"position": 1,
+					"length": 1,
+					"group": 1,
+					"string_extracted": "a"
+				},
+				{
+					"position": 2,
+					"length": 2,
+					"group": 2,
+					"string_extracted": "\\1"
+				}
+			],
+			"string_match": [
+				"a\\1",
+				"a",
+				"\\1"
+			],
+			"string_resulting": "\\1a"
+		},
+		"reqAfter": {
+			"pattern": "(a)(\\\\1)",
+			"string": "a\\1",
+			"string_for_replacement": "\\2\\1"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "f08",
+		"fn": "substitute",
+		"result": {
+			"success": true,
+			"string_extracted": null,
+			"position": [
+				2
+			],
+			"length": [
+				1
+			],
+			"group": [
+				0
+			],
+			"listbox": [
+				{
+					"position": 2,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "b"
+				}
+			],
+			"string_match": [
+				"b"
+			],
+			"string_resulting": "abbc"
+		},
+		"reqAfter": {
+			"pattern": "b",
+			"string": "abc",
+			"string_for_replacement": "\\0\\0"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "f09",
+		"fn": "substitute",
+		"result": {
+			"success": true,
+			"string_extracted": null,
+			"position": [
+				2,
+				2
+			],
+			"length": [
+				1,
+				1
+			],
+			"group": [
+				0,
+				1
+			],
+			"listbox": [
+				{
+					"position": 2,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "b"
+				},
+				{
+					"position": 2,
+					"length": 1,
+					"group": 1,
+					"string_extracted": "b"
+				}
+			],
+			"string_match": [
+				"b",
+				"b"
+			],
+			"string_resulting": "a[\\9]c"
+		},
+		"reqAfter": {
+			"pattern": "(b)",
+			"string": "abc",
+			"string_for_replacement": "[\\9]"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "f10",
+		"fn": "substitute",
+		"result": {
+			"success": true,
+			"string_extracted": null,
+			"position": [
+				1,
+				1,
+				-1,
+				2,
+				-1,
+				2
+			],
+			"length": [
+				1,
+				1,
+				0,
+				1,
+				0,
+				1
+			],
+			"group": [
+				0,
+				1,
+				2,
+				0,
+				1,
+				2
+			],
+			"listbox": [
+				{
+					"position": 1,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "a"
+				},
+				{
+					"position": 1,
+					"length": 1,
+					"group": 1,
+					"string_extracted": "a"
+				},
+				{
+					"position": -1,
+					"length": 0,
+					"group": 2,
+					"string_extracted": ""
+				},
+				{
+					"position": 2,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "b"
+				},
+				{
+					"position": -1,
+					"length": 0,
+					"group": 1,
+					"string_extracted": ""
+				},
+				{
+					"position": 2,
+					"length": 1,
+					"group": 2,
+					"string_extracted": "b"
+				}
+			],
+			"string_match": [
+				"a",
+				"a",
+				"",
+				"b",
+				"",
+				"b"
+			],
+			"string_resulting": "<a><b>"
+		},
+		"reqAfter": {
+			"pattern": "(a)|(b)",
+			"string": "ab",
+			"string_for_replacement": "<\\1\\2>"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "f11",
+		"fn": "substitute",
+		"result": {
+			"success": true,
+			"string_extracted": null,
+			"position": [
+				1,
+				1,
+				2,
+				4,
+				4,
+				5
+			],
+			"length": [
+				2,
+				1,
+				1,
+				2,
+				1,
+				1
+			],
+			"group": [
+				0,
+				1,
+				2,
+				0,
+				1,
+				2
+			],
+			"listbox": [
+				{
+					"position": 1,
+					"length": 2,
+					"group": 0,
+					"string_extracted": "ab"
+				},
+				{
+					"position": 1,
+					"length": 1,
+					"group": 1,
+					"string_extracted": "a"
+				},
+				{
+					"position": 2,
+					"length": 1,
+					"group": 2,
+					"string_extracted": "b"
+				},
+				{
+					"position": 4,
+					"length": 2,
+					"group": 0,
+					"string_extracted": "cd"
+				},
+				{
+					"position": 4,
+					"length": 1,
+					"group": 1,
+					"string_extracted": "c"
+				},
+				{
+					"position": 5,
+					"length": 1,
+					"group": 2,
+					"string_extracted": "d"
+				}
+			],
+			"string_match": [
+				"ab",
+				"a",
+				"b",
+				"cd",
+				"c",
+				"d"
+			],
+			"string_resulting": "baab dccd"
+		},
+		"reqAfter": {
+			"pattern": "(\\w)(\\w)",
+			"string": "ab cd",
+			"string_for_replacement": "\\2\\1\\0"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "f12",
+		"fn": "extract",
+		"result": {
+			"success": true,
+			"string_extracted": [
+				"34",
+				"6",
+				"12",
+				"5"
+			],
+			"position": [
+				6,
+				13,
+				3,
+				11
+			],
+			"length": [
+				2,
+				1,
+				2,
+				1
+			],
+			"group": [
+				2,
+				2,
+				1,
+				1
+			],
+			"listbox": [
+				{
+					"position": 6,
+					"length": 2,
+					"group": 2,
+					"string_extracted": "34"
+				},
+				{
+					"position": 13,
+					"length": 1,
+					"group": 2,
+					"string_extracted": "6"
+				},
+				{
+					"position": 3,
+					"length": 2,
+					"group": 1,
+					"string_extracted": "12"
+				},
+				{
+					"position": 11,
+					"length": 1,
+					"group": 1,
+					"string_extracted": "5"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "(\\d+)-(\\d+)",
+			"string": "a 12-34 b 5-6",
+			"group": [
+				2,
+				"1"
+			]
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "f13",
+		"fn": "extract",
+		"result": {
+			"success": true,
+			"string_extracted": [
+				"12-34",
+				"5-6"
+			],
+			"position": [
+				3,
+				11
+			],
+			"length": [
+				5,
+				3
+			],
+			"group": [
+				0,
+				0
+			],
+			"listbox": [
+				{
+					"position": 3,
+					"length": 5,
+					"group": 0,
+					"string_extracted": "12-34"
+				},
+				{
+					"position": 11,
+					"length": 3,
+					"group": 0,
+					"string_extracted": "5-6"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "(\\d+)-(\\d+)",
+			"string": "a 12-34 b 5-6",
+			"group": [
+				0
+			]
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "f14",
+		"fn": "extract",
+		"result": {
+			"success": true,
+			"string_extracted": [
+				"1",
+				"22"
+			],
+			"position": [
+				2,
+				4
+			],
+			"length": [
+				1,
+				2
+			],
+			"group": [
+				0,
+				0
+			],
+			"listbox": [
+				{
+					"position": 2,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "1"
+				},
+				{
+					"position": 4,
+					"length": 2,
+					"group": 0,
+					"string_extracted": "22"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": "\\d+",
+			"string": "a1b22"
+		},
+		"err": 0,
+		"errMsg": ""
+	},
+	{
+		"id": "f15",
+		"fn": "split",
+		"result": {
+			"success": true,
+			"string_extracted": [
+				"x",
+				"y"
+			],
+			"text_extracted": [
+				"x",
+				"y"
+			],
+			"position": [
+				1,
+				3
+			],
+			"length": [
+				1,
+				1
+			],
+			"listbox": [
+				{
+					"position": 1,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "x"
+				},
+				{
+					"position": 3,
+					"length": 1,
+					"group": 0,
+					"string_extracted": "y"
+				}
+			]
+		},
+		"reqAfter": {
+			"pattern": ";",
+			"string": "x;y"
+		},
+		"err": 0,
+		"errMsg": ""
+	}
+]

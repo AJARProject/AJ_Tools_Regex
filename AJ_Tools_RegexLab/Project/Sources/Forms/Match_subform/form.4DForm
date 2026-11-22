@@ -67,13 +67,13 @@
 					"resizingMode": "legacy",
 					"listboxType": "collection",
 					"movableRows": false,
-					"dataSource": "Form:C1466.result.listbox",
+					"dataSource": "Form.result.listbox",
 					"selectionMode": "single",
 					"scrollbarHorizontal": "automatic",
 					"columns": [
 						{
 							"name": "Column1",
-							"dataSource": "This:C1470.group",
+							"dataSource": "This.group",
 							"dataSourceTypeHint": "number",
 							"width": 50,
 							"minWidth": 30,
@@ -95,7 +95,7 @@
 						},
 						{
 							"name": "Column3",
-							"dataSource": "This:C1470.position",
+							"dataSource": "This.position",
 							"dataSourceTypeHint": "number",
 							"width": 50,
 							"minWidth": 30,
@@ -116,7 +116,7 @@
 						},
 						{
 							"name": "Column4",
-							"dataSource": "This:C1470.length",
+							"dataSource": "This.length",
 							"dataSourceTypeHint": "number",
 							"width": 50,
 							"minWidth": 30,
@@ -137,7 +137,7 @@
 						},
 						{
 							"name": "Column5",
-							"dataSource": "This:C1470.string_extracted",
+							"dataSource": "This.string_extracted",
 							"width": 400,
 							"minWidth": 10,
 							"maxWidth": 32000,

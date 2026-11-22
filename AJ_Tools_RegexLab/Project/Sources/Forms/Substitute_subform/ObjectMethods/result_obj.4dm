@@ -13,11 +13,11 @@
 Case of 
 		
 		
-	: (Form event code:C388=On After Keystroke:K2:26)
+	: (Form event code=On After Keystroke)
 		
-		OBJECT SET ENABLED:C1123(*;"obj_Button_Cancel";True:C214)
+		OBJECT SET ENABLED(*;"obj_Button_Cancel";True)
 		
-		OBJECT SET ENABLED:C1123(*;"obj_Button_save";True:C214)
+		OBJECT SET ENABLED(*;"obj_Button_save";True)
 		
 		
 		

@@ -1,42 +1,43 @@
-/HDI*
-/*.docx
-*.4darchive
-userPreferences.*
-*BuildApp*
-*/Preferences/*
-Cache.xml
-Conversion*.json
-LogStyleSheet.xsl
-**/DerivedData/**
-data.match
+# AJ_Tools_Regex: component in AJ_Tools_Regex/, test application in AJ_Tools_RegexLab/
+# Patterns are written for both project folders (not only the repository root).
 
-
-# 4D project architecture
-######################
-
-/Data/*
-/Logs/*
-/Project/DerivedData/*
-/Project/BuildSettings/*
-/Settings/*
-/userPreferences*/*
-/Builds/*
-
-# Don't need the data file, indexes, symbols, or journal
+# Created by 4D when a project is opened or compiled
+**/Data/
+**/Logs/
+**/Project/DerivedData/
+**/Project/Trash/
+**/userPreferences.*/
+**/Libraries/
+**/Resources/en.lproj/
 *.4DD
 *.4DIndx
 *.4DIndy
-*symbols.txt
+*.Match
 *.journal
-
-# dont need the 4d info component folder_reports
+*symbols.txt
+*.4darchive
+Cache.xml
+Conversion*.json
 Folder_Reports
 
-# include the following if you want to ignore the database settings
-*.4DSettings
+# Settings: only the component build settings are versioned
+# (macOS matches patterns case-insensitively, hence the explicit negation)
+/AJ_Tools_Regex/Settings/*
+!/AJ_Tools_Regex/Settings/buildApp.4DSettings
+/AJ_Tools_RegexLab/Settings/
 
-# OS generated files #
-######################
+# AJ_Tools_Regex_Build result file
+build_result.txt
+
+# Component built by BUILD APPLICATION (published as a GitHub release asset, not committed)
+/AJ_Tools_Regex/Components/
+/AJ_Tools_Regex/Builds/
+# The Lab gets AJ_Tools_Regex from dependencies.json (no embedded copy)
+/AJ_Tools_RegexLab/Components/
+# Lab exports (export button)
+/AJ_Tools_RegexLab/export/
+
+# OS generated files
 .DS_Store
 .DS_Store?
 ._*
