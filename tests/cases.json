@@ -1,0 +1,608 @@
+[
+ {
+  "id": "m01",
+  "fn": "match",
+  "req": {
+   "pattern": "a.*c",
+   "string": "abbbc"
+  },
+  "note": "whole string"
+ },
+ {
+  "id": "m02",
+  "fn": "match",
+  "req": {
+   "pattern": "b+",
+   "string": "abbbc"
+  },
+  "note": "substring, default mode"
+ },
+ {
+  "id": "m03",
+  "fn": "match",
+  "req": {
+   "pattern": "b+",
+   "string": "abbbc",
+   "position_only": true,
+   "start": 2
+  },
+  "note": "position_only at 2"
+ },
+ {
+  "id": "m04",
+  "fn": "match",
+  "req": {
+   "pattern": "b+",
+   "string": "abbbc",
+   "position_only": true,
+   "start": 1
+  },
+  "note": "position_only at 1"
+ },
+ {
+  "id": "m05",
+  "fn": "match",
+  "req": {
+   "pattern": "b+",
+   "string": "abbbc",
+   "start": 3
+  },
+  "note": "start without position_only"
+ },
+ {
+  "id": "m06",
+  "fn": "match",
+  "req": {
+   "pattern": "[:xdigit:]{8}-[:xdigit:]{4}-[:xdigit:]{4}-[:xdigit:]{4}-[:xdigit:]{12}",
+   "string": "6C7122D2-8986-41E8-8B3D-D50786486706"
+  },
+  "note": "README uuid"
+ },
+ {
+  "id": "m07",
+  "fn": "match",
+  "req": {
+   "pattern": "",
+   "string": "abc"
+  },
+  "note": "empty pattern"
+ },
+ {
+  "id": "m08",
+  "fn": "match",
+  "req": {
+   "pattern": "a"
+  },
+  "note": "missing string"
+ },
+ {
+  "id": "m09",
+  "fn": "match",
+  "req": null,
+  "note": "null request"
+ },
+ {
+  "id": "m10",
+  "fn": "match",
+  "req": {
+   "pattern": "é+",
+   "string": "café"
+  },
+  "note": "unicode substring"
+ },
+ {
+  "id": "m11",
+  "fn": "match",
+  "req": {
+   "pattern": "caf.",
+   "string": "café"
+  },
+  "note": "unicode whole"
+ },
+ {
+  "id": "m12",
+  "fn": "match",
+  "req": {
+   "pattern": "(?i)ABC",
+   "string": "abc"
+  },
+  "note": "case-insensitive flag"
+ },
+ {
+  "id": "m13",
+  "fn": "match",
+  "req": {
+   "pattern": "(\\d+)-(\\d+)",
+   "string": "x 12-34 y"
+  },
+  "note": "groups, substring"
+ },
+ {
+  "id": "x01",
+  "fn": "matches",
+  "req": {
+   "pattern": "(\\d+)-(\\d+)",
+   "string": "a 12-34 b 5-6"
+  },
+  "note": "groups"
+ },
+ {
+  "id": "x02",
+  "fn": "matches",
+  "req": {
+   "pattern": "\\w+",
+   "string": "one two  three"
+  },
+  "note": ""
+ },
+ {
+  "id": "x03",
+  "fn": "matches",
+  "req": {
+   "pattern": "\\w+",
+   "string": "one two  three",
+   "start": 5
+  },
+  "note": "start"
+ },
+ {
+  "id": "x04",
+  "fn": "matches",
+  "req": {
+   "pattern": "\\d+",
+   "string": "ab12cd34",
+   "position_only": true,
+   "start": 3
+  },
+  "note": "position_only"
+ },
+ {
+  "id": "x05",
+  "fn": "matches",
+  "req": {
+   "pattern": "z",
+   "string": "abc"
+  },
+  "note": "no match"
+ },
+ {
+  "id": "x06",
+  "fn": "matches",
+  "req": {
+   "pattern": "a*",
+   "string": "baac"
+  },
+  "note": "zero-length matches"
+ },
+ {
+  "id": "x07",
+  "fn": "matches",
+  "req": {
+   "pattern": "",
+   "string": "abc"
+  },
+  "note": "empty pattern"
+ },
+ {
+  "id": "x08",
+  "fn": "matches",
+  "req": null,
+  "note": "null request"
+ },
+ {
+  "id": "x09",
+  "fn": "matches",
+  "req": {
+   "pattern": "(a)|(b)",
+   "string": "ab"
+  },
+  "note": "non-participating group"
+ },
+ {
+  "id": "x10",
+  "fn": "matches",
+  "req": {
+   "pattern": "(?m)^\\w+",
+   "string": "l1 x\nl2 y"
+  },
+  "note": "multiline"
+ },
+ {
+  "id": "x11",
+  "fn": "matches",
+  "req": {
+   "pattern": "ISBN(?:-13)?:?\\x20(97(?:8|9)([ -]?)(?=\\d{1,5}\\2?\\d{1,7}\\2?\\d{1,6}\\2?\\d)(?:\\d\\2*){9}\\d)",
+   "string": "ISBN 9790765335999\nISBN-13: 978-0615-856-73-5\nISBN-13: 978-0615856735"
+  },
+  "note": "README ISBN (fixed)"
+ },
+ {
+  "id": "s01",
+  "fn": "substitute",
+  "req": {
+   "pattern": "([ab]+)\\1",
+   "string": "\"abab\" but not \"abaab\"",
+   "string_for_replacement": "\\1"
+  },
+  "note": "README"
+ },
+ {
+  "id": "s02",
+  "fn": "substitute",
+  "req": {
+   "pattern": "\\d+",
+   "string": "a1b22",
+   "string_for_replacement": "<\\0>"
+  },
+  "note": "\\0 whole match"
+ },
+ {
+  "id": "s03",
+  "fn": "substitute",
+  "req": {
+   "pattern": "(\\w+) (\\w+)",
+   "string": "hello world",
+   "string_for_replacement": "\\2 \\1"
+  },
+  "note": "swap"
+ },
+ {
+  "id": "s04",
+  "fn": "substitute",
+  "req": {
+   "pattern": "\\s+",
+   "string": "a b  c",
+   "string_for_replacement": ""
+  },
+  "note": "delete"
+ },
+ {
+  "id": "s05",
+  "fn": "substitute",
+  "req": {
+   "pattern": "z",
+   "string": "abc",
+   "string_for_replacement": "y"
+  },
+  "note": "no match"
+ },
+ {
+  "id": "s06",
+  "fn": "substitute",
+  "req": {
+   "pattern": "(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)",
+   "string": "abcdefghijkl",
+   "string_for_replacement": "[\\10|\\1|\\12]"
+  },
+  "note": "10+ groups"
+ },
+ {
+  "id": "s07",
+  "fn": "substitute",
+  "req": {
+   "pattern": "\\d",
+   "string": "a1b2"
+  },
+  "note": "replacement missing"
+ },
+ {
+  "id": "s08",
+  "fn": "substitute",
+  "req": null,
+  "note": "null request"
+ },
+ {
+  "id": "s09",
+  "fn": "substitute",
+  "req": {
+   "pattern": "(\\d)(\\d)",
+   "string": "12 34",
+   "string_for_replacement": "\\2\\1"
+  },
+  "note": "several matches with groups"
+ },
+ {
+  "id": "s10",
+  "fn": "substitute",
+  "req": {
+   "pattern": "o",
+   "string": "foo boo",
+   "string_for_replacement": "0"
+  },
+  "note": "simple"
+ },
+ {
+  "id": "p01",
+  "fn": "split",
+  "req": {
+   "pattern": ",\\s*",
+   "string": "a, b,c"
+  },
+  "note": ""
+ },
+ {
+  "id": "p02",
+  "fn": "split",
+  "req": {
+   "pattern": "\\s+(AND|OR)\\s+",
+   "string": "Maurice AND Javascript OR 4D"
+  },
+  "note": ""
+ },
+ {
+  "id": "p03",
+  "fn": "split",
+  "req": {
+   "pattern": "x",
+   "string": "abc"
+  },
+  "note": "no delimiter"
+ },
+ {
+  "id": "p04",
+  "fn": "split",
+  "req": {
+   "pattern": ",",
+   "string": ",a,b"
+  },
+  "note": "leading delimiter"
+ },
+ {
+  "id": "p05",
+  "fn": "split",
+  "req": {
+   "pattern": ",",
+   "string": "a,b,"
+  },
+  "note": "trailing delimiter"
+ },
+ {
+  "id": "p06",
+  "fn": "split",
+  "req": {
+   "pattern": "x*",
+   "string": "abc"
+  },
+  "note": "zero-length delimiter"
+ },
+ {
+  "id": "p07",
+  "fn": "split",
+  "req": {
+   "pattern": ",",
+   "string": ""
+  },
+  "note": "empty string"
+ },
+ {
+  "id": "p08",
+  "fn": "split",
+  "req": null,
+  "note": "null request"
+ },
+ {
+  "id": "e01",
+  "fn": "extract",
+  "req": {
+   "pattern": "(\\d+)-(\\d+)",
+   "string": "a 12-34 b 5-6",
+   "group": [
+    "2"
+   ]
+  },
+  "note": "group 2 as text"
+ },
+ {
+  "id": "e02",
+  "fn": "extract",
+  "req": {
+   "pattern": "(\\d+)-(\\d+)",
+   "string": "a 12-34 b 5-6",
+   "group": [
+    0,
+    1
+   ]
+  },
+  "note": "groups 0,1 numbers"
+ },
+ {
+  "id": "e03",
+  "fn": "extract",
+  "req": {
+   "pattern": "(\\d+)-(\\d+)",
+   "string": "a 12-34 b 5-6"
+  },
+  "note": "group missing"
+ },
+ {
+  "id": "e04",
+  "fn": "extract",
+  "req": {
+   "pattern": "(\\d+)-(\\d+)",
+   "string": "a 12-34 b 5-6",
+   "group": []
+  },
+  "note": "group empty"
+ },
+ {
+  "id": "e05",
+  "fn": "extract",
+  "req": {
+   "pattern": "(?m)(,|\\r?\\n|^)([^\",\\r\\n]+|\"(?:[^\"]|\"\")*\"|)",
+   "string": "aaa,b b,\"\"\"c\"\" cc\"\n1,,\"333\",\"12,45,45\",three,\nstill more threes",
+   "group": [
+    "2"
+   ]
+  },
+  "note": "README CSV"
+ },
+ {
+  "id": "e06",
+  "fn": "extract",
+  "req": {
+   "pattern": "z",
+   "string": "abc",
+   "group": [
+    0
+   ]
+  },
+  "note": "no match"
+ },
+ {
+  "id": "e07",
+  "fn": "extract",
+  "req": null,
+  "note": "null request"
+ },
+ {
+  "id": "e08",
+  "fn": "extract",
+  "req": {
+   "pattern": "",
+   "string": "abc",
+   "group": [
+    0
+   ]
+  },
+  "note": "empty pattern"
+ },
+ {
+  "id": "f01",
+  "fn": "match",
+  "req": {
+   "pattern": "b+",
+   "string": "abbbc",
+   "whole_string": true
+  }
+ },
+ {
+  "id": "f02",
+  "fn": "match",
+  "req": {
+   "pattern": "a.*c",
+   "string": "abbbc",
+   "whole_string": true
+  }
+ },
+ {
+  "id": "f03",
+  "fn": "match",
+  "req": {
+   "pattern": "c",
+   "string": "abcabc",
+   "start": 4
+  }
+ },
+ {
+  "id": "f04",
+  "fn": "match",
+  "req": {
+   "pattern": "b",
+   "string": "abc",
+   "start": 10
+  }
+ },
+ {
+  "id": "f05",
+  "fn": "match",
+  "req": {
+   "pattern": "b",
+   "string": "abc",
+   "start": 0
+  }
+ },
+ {
+  "id": "f06",
+  "fn": "match",
+  "req": {
+   "pattern": "b",
+   "string": "abc",
+   "position_only": true,
+   "start": 1
+  }
+ },
+ {
+  "id": "f07",
+  "fn": "substitute",
+  "req": {
+   "pattern": "(a)(\\\\1)",
+   "string": "a\\1",
+   "string_for_replacement": "\\2\\1"
+  }
+ },
+ {
+  "id": "f08",
+  "fn": "substitute",
+  "req": {
+   "pattern": "b",
+   "string": "abc",
+   "string_for_replacement": "\\0\\0"
+  }
+ },
+ {
+  "id": "f09",
+  "fn": "substitute",
+  "req": {
+   "pattern": "(b)",
+   "string": "abc",
+   "string_for_replacement": "[\\9]"
+  }
+ },
+ {
+  "id": "f10",
+  "fn": "substitute",
+  "req": {
+   "pattern": "(a)|(b)",
+   "string": "ab",
+   "string_for_replacement": "<\\1\\2>"
+  }
+ },
+ {
+  "id": "f11",
+  "fn": "substitute",
+  "req": {
+   "pattern": "(\\w)(\\w)",
+   "string": "ab cd",
+   "string_for_replacement": "\\2\\1\\0"
+  }
+ },
+ {
+  "id": "f12",
+  "fn": "extract",
+  "req": {
+   "pattern": "(\\d+)-(\\d+)",
+   "string": "a 12-34 b 5-6",
+   "group": [
+    2,
+    "1"
+   ]
+  }
+ },
+ {
+  "id": "f13",
+  "fn": "extract",
+  "req": {
+   "pattern": "(\\d+)-(\\d+)",
+   "string": "a 12-34 b 5-6",
+   "group": [
+    0
+   ]
+  }
+ },
+ {
+  "id": "f14",
+  "fn": "extract",
+  "req": {
+   "pattern": "\\d+",
+   "string": "a1b22"
+  }
+ },
+ {
+  "id": "f15",
+  "fn": "split",
+  "req": {
+   "pattern": ";",
+   "string": "x;y"
+  }
+ }
+]

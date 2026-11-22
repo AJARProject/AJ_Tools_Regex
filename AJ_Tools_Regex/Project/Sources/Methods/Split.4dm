@@ -2,16 +2,19 @@
 // Split ( param_object ) -> result
 //
 // param_object: (object) which contains :
-//   - string: (text) String in which search will be done
-//   - pattern: (text) Regular expression
+//   - string: (text) String to split
+//   - pattern: (text) Regular expression matching the delimiters
 //
 // result: (object) which contains :
-//   - success: (boolean) True if the expression is resolved. else False
-//   - text_extracted: (collection) - (text)  Result of the regex extraction
-//   - position: (collection) - (longint)  Position of the text extracted
-//   - length: (collection) - (longint)  Length of the text extracted
+//   - success: (boolean) True if at least one delimiter is found, else False
+//   - string_extracted: (collection) - (text) Fields between the delimiters
+//   - text_extracted: (collection) - (text) Same as string_extracted (deprecated, kept for compatibility)
+//   - position: (collection) - (longint) Position of each field
+//   - length: (collection) - (longint) Length of each field
 //   - listbox (collection of objects) to use directly with a 4D Listbox (see regexLab 5)
+//       [{position; length; group (0); string_extracted}]
 //
+// The request object is not modified.
 // ----------------------------------------------------
 // User name (OS): Maurice Inzirillo
 // Date and time: 17.10.18, 18:29:31
@@ -27,6 +30,7 @@
 var $result_obj; $request_obj : Object
 var $isOk_b : Boolean
 var $pos_l : Integer
+var $fields_c : Collection
 
 ARRAY LONGINT($_pos_l; 0)
 ARRAY LONGINT($_length_l; 0)
@@ -41,14 +45,16 @@ $result_obj.success:=False  // default value
 
 If ($request#Null)
 	
-	$request_obj:=$request
+	$request_obj:=OB Copy($request)  // the caller's object is not modified
 	If ($request_obj.pattern="") | ($request_obj.string="")
 		
 		$result_obj.success:=False
 		
 	Else 
 		
-		$result_obj.text_extracted:=New collection
+		$fields_c:=New collection
+		$result_obj.string_extracted:=$fields_c
+		$result_obj.text_extracted:=$fields_c  // deprecated alias of string_extracted (same collection)
 		$result_obj.position:=New collection
 		$result_obj.length:=New collection
 		$result_obj.listbox:=New collection
@@ -59,14 +65,14 @@ If ($request#Null)
 			$isOk_b:=Match regex($request_obj.pattern; $request_obj.string; $pos_l; $_pos_l; $_length_l)  //v1.2
 			
 			If ($isOk_b)
-				$result_obj.text_extracted.push(Substring($request_obj.string; $pos_l; $_pos_l{0}-$pos_l))
+				$fields_c.push(Substring($request_obj.string; $pos_l; $_pos_l{0}-$pos_l))
 				If ($_length_l{0}=0)
 					$result_obj.success:=False
 					$isOk_b:=False
 				Else 
 					$result_obj.position.push($pos_l)
 					$result_obj.length.push($_pos_l{0}-$pos_l)
-					$result_obj.listbox.push(New object("position"; $pos_l; "length"; $_pos_l{0}-$pos_l; "group"; "0"; "string_extracted"; Substring($request_obj.string; $pos_l; $_pos_l{0}-$pos_l)))
+					$result_obj.listbox.push(New object("position"; $pos_l; "length"; $_pos_l{0}-$pos_l; "group"; 0; "string_extracted"; Substring($request_obj.string; $pos_l; $_pos_l{0}-$pos_l)))
 					$pos_l:=$_pos_l{0}+$_length_l{0}
 					$result_obj.success:=True
 				End if 
@@ -74,10 +80,10 @@ If ($request#Null)
 			Else   // last separator
 				//Test if the resulting string is empty or not
 				If (Substring($request_obj.string; $pos_l)#"")
-					$result_obj.text_extracted.push(Substring($request_obj.string; $pos_l))
+					$fields_c.push(Substring($request_obj.string; $pos_l))
 					$result_obj.position.push($pos_l)
 					$result_obj.length.push(Length(Substring($request_obj.string; $pos_l)))
-					$result_obj.listbox.push(New object("position"; $pos_l; "length"; Length(Substring($request_obj.string; $pos_l)); "group"; "0"; "string_extracted"; Substring($request_obj.string; $pos_l)))
+					$result_obj.listbox.push(New object("position"; $pos_l; "length"; Length(Substring($request_obj.string; $pos_l)); "group"; 0; "string_extracted"; Substring($request_obj.string; $pos_l)))
 				End if 
 			End if 
 			

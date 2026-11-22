@@ -1,3 +1,6 @@
+> **5.2.0** : corrections de comportement (match cherche à partir de `start`, `\0` dans substitute, extract sans groupe, requête non modifiée, `string_extracted` dans split). Voir [CHANGELOG.md](CHANGELOG.md).
+> **5.2.0**: behaviour fixes (match searches from `start`, `\0` in substitute, extract without group, request left unchanged, `string_extracted` in split). See [CHANGELOG.md](CHANGELOG.md).
+
 # AJ_Tools_Regex
 
 "AJ_Tools_Regex" is a component that will add powerful text functions by using regular expression. "Regex Lab" uses the new command Match Regex provided with 4D V11 SQL.

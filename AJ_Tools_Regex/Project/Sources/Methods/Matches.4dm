@@ -14,7 +14,10 @@
 //   - length: (collection) - (longint)  Length of the text(s) extracted
 //   - group: (collection) - (longint)  Contains the capture group number of the corresponding string_extracted collection element
 //   - listbox (collection of objects) to use directly with a 4D Listbox (see regexLab 5)
+//       [{position; length; group; string_extracted}]
+//   Non-participating groups: position -1, length 0, string_extracted "".
 //
+// The request object is not modified.
 // ----------------------------------------------------
 // User name (OS): Maurice Inzirillo
 // Date and time: 17.10.18, 18:29:43
@@ -39,7 +42,7 @@ $result_obj.success:=False  // default value
 
 If ($request#Null)  // if there is an object parameter
 	
-	$request_obj:=$request
+	$request_obj:=OB Copy($request)  // the caller's object is not modified
 	
 	If ($request_obj.pattern#Null) & ($request_obj.string#Null)
 		If ($request_obj.pattern#"") & ($request_obj.string#"")
